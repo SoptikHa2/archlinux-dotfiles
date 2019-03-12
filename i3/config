@@ -178,3 +178,6 @@ exec --no-startup-id compton --daemon --backend xrender
 exec --no-startup-id feh --bg-center ~/data/Pictures/wallpaper.png
 # Start polybar
 exec --no-startup-id ~/.config/polybar/launch.sh
+# Set brightness
+bindcode 232 exec brightness-down
+bindcode 233 exec brightness-up
