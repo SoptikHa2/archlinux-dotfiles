@@ -1,0 +1,119 @@
+; Define polybar color theme
+[colors]
+background = #90303030
+background_alt = #90505050
+foreground = #dfdfdf
+primary = #035e2c
+alert = #bd2c40
+not_important = #999
+
+[bar/top]
+width = 100%
+height = 28
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+; MODULES
+modules-left = i3_workspaces
+modules-center = window_name
+modules-right = volume_percentage volume battery keyboard pwarrow_left_1 datetime
+
+font-0 = fixed:pixelsize=12;1
+font-1 = FontAwesome:style=Regular:size=12
+
+line-size = 4
+
+
+
+; Show currently focused window name at center of screen
+[module/window_name]
+type = custom/script
+exec = xdotool getwindowfocus getwindowname
+interval = 0.3
+
+label-underline = ${colors.primary}
+label-padding = 4
+
+; Show i3 workspaces, make the selected one underlined by
+; primary color (green) and with lighter background and text
+[module/i3_workspaces]
+type = internal/i3
+
+format = <label-state>
+label-separator = "   "
+
+label-focused-foreground = $(colors.foreground)
+label-unfocused-foreground = ${colors.not_important}
+label-urgend-foreground = ${colors.alert}
+
+label-focused-underline = ${colors.primary}
+label-focused-background = ${colors.background_alt}
+label-focused-padding-right = 2
+
+
+; Show date and time
+[module/datetime]
+type = internal/date
+interval = 20
+
+date = %Y-%m-%d%
+time = %H:%M
+
+label = %date% %time%
+label-padding = 4
+
+
+
+; Select keyboard layout
+[module/keyboard]
+type = internal/xkeyboard
+
+; Dont show numlock status
+blacklist-0 = num lock
+
+label-layout-underline = ${colors.primary}
+label-layout-padding = 2
+
+label-layout = %name%
+
+
+
+; Set volume
+[module/volume]
+type = internal/alsa
+
+format-volume = <bar-volume>
+format-volume-padding = 2
+
+bar-volume-width = 20
+bar-volume-empty = ─
+bar-volume-fill = ─
+bar-volume-indicator = |
+
+
+[module/volume_percentage]
+type = internal/pulseaudio
+
+
+; Show battery
+[module/battery]
+type = internal/battery
+
+; This is useful in case the battery never reports 100% charge
+full-at = 99
+
+; Use the following command to list batteries and adapters:
+; $ ls -1 /sys/class/power_supply/
+battery = BAT0
+adapter = ADP1
+
+poll-interval = 5
+
+
+; POWERLINE-LIKE ARROWS
+[module/pwarrow_left_1]
+type = custom/text
+content = "◀"
+content-foreground = ${colors.foreground}
+content-background = ${colors.background}
