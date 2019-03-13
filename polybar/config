@@ -3,8 +3,8 @@
 background = #90303030
 background_alt = #90505050
 foreground = #dfdfdf
-primary = #035e2c
-alert = #bd2c40
+primary = #f21032
+alert = #f2a310
 not_important = #999
 
 [bar/top]
@@ -17,7 +17,7 @@ foreground = ${colors.foreground}
 ; MODULES
 modules-left = i3_workspaces
 modules-center = window_name
-modules-right = volume_percentage volume battery keyboard pwarrow_left_1 datetime
+modules-right = battery keyboard datetime
 
 font-0 = fixed:pixelsize=12;1
 font-1 = FontAwesome:style=Regular:size=12
@@ -107,13 +107,30 @@ full-at = 99
 ; $ ls -1 /sys/class/power_supply/
 battery = BAT0
 adapter = ADP1
-
 poll-interval = 5
 
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
 
-; POWERLINE-LIKE ARROWS
-[module/pwarrow_left_1]
-type = custom/text
-content = "◀"
-content-foreground = ${colors.foreground}
-content-background = ${colors.background}
+label-charging = %percentage%%
+label-discharging = %percentage%%
+
+label-charging-padding-right = 4
+label-discharging-padding-right = 4
+ramp-capacity-padding-left = 4
+animation-charging-left = 4
+
+; Only applies if <ramp-capacity> is used
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+; Framerate in milliseconds
+animation-charging-framerate = 750
