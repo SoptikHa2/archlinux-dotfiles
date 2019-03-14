@@ -181,3 +181,5 @@ exec --no-startup-id ~/.config/polybar/launch.sh
 # Set brightness
 bindcode 232 exec brightness-down
 bindcode 233 exec brightness-up
+# Change keyboard
+bindsym $mod+Tab exec /usr/bin/change-keyboard
