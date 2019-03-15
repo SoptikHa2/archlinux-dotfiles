@@ -78,7 +78,6 @@ label-layout-padding = 2
 label-layout = %name%
 
 
-
 ; Set volume
 [module/volume]
 type = internal/alsa
