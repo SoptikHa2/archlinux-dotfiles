@@ -187,3 +187,5 @@ bindsym $mod+Tab exec /usr/bin/change-keyboard
 bindcode 121 exec pactl set-sink-volume 0 0
 bindcode 122 exec pactl set-sink-volume 0 -5%
 bindcode 123 exec pactl set-sink-volume 0 +5%
+# Lock computer
+bindocde 133 ~/.config/lock.sh

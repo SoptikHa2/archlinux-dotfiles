@@ -99,3 +99,6 @@ source $ZSH/oh-my-zsh.sh
 # Add rust path
 source ~/.cargo/env
 export PATH=~/.local/bin:$PATH
+
+# Make xclip default selection clipboard
+alias xclip="xclip -selection clipboard"
