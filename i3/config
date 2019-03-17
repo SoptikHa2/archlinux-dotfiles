@@ -194,7 +194,7 @@ bindsym $mod+Ctrl+l exec lock-custom
 # Use PrtSc to take screenshot. By default it is saved into file.
 # Use Ctrl to save only current window
 # Use Shift to save to clipboard
-bindcode 107 exec maim ~/data/Pictures/Screenshot-$(date +%Y-%m-%d-%H-%M).png
+bindcode 107 exec maim ~/data/Pictures/Screenshot-$(date +%Y-%m-%d-%H-%M-%S).png
 bindsym Shift+Print exec maim | xclip -selection clipboard -t image/png
-bindsym Ctrl+Print exec maim -i $(xdotool getactivewindow) ~/data/Pictures/Screenshot-$(date +%Y-%m-%d-%H-%M).png
+bindsym Ctrl+Print exec maim -i $(xdotool getactivewindow) ~/data/Pictures/Screenshot-$(date +%Y-%m-%d-%H-%M-%S).png
 bindsym Shift+Ctrl+Print exec maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
