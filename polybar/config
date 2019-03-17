@@ -36,7 +36,7 @@ label-underline = ${colors.primary}
 label-padding = 4
 
 ; Show i3 workspaces, make the selected one underlined by
-; primary color (green) and with lighter background and text
+; primary color and with lighter background and text
 [module/i3_workspaces]
 type = internal/i3
 
@@ -49,7 +49,8 @@ label-urgend-foreground = ${colors.alert}
 
 label-focused-underline = ${colors.primary}
 label-focused-background = ${colors.background_alt}
-label-focused-padding-right = 2
+label-focused-padding-left = 1
+label-focused-padding = 2
 
 
 ; Show date and time
