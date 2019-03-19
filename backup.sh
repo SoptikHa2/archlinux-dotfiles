@@ -12,12 +12,13 @@ removetmp() {
 trap removetmp HUP INT TERM
 
 # Do not backup encrypted folder, as it's large, not updated often, and should be updated manually when changed
-# Don't backup AUR, Applications, or Steam either
+# Don't backup AUR, Applications, Torrent, or Steam either
 tar\
 	--exclude='/mnt/data/petr/AUR'\
 	--exclude='/mnt/data/petr/Applications'\
 	--exclude='/mnt/data/petr/Encrypted'\
 	--exclude='/mnt/data/petr/SteamLibrary'\
+	--exclude='/mnt/data/petr/Torrent'\
 	~/archlinux-dotfiles\
 	~/*.txt\
 	'/mnt/data/petr'\
