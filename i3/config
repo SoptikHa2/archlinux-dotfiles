@@ -179,8 +179,9 @@ exec --no-startup-id feh --bg-center ~/data/Pictures/wallpaper.png
 # Start polybar
 exec --no-startup-id ~/.config/polybar/launch.sh
 # Set dmenu alternative (rofi)
-# Start rofi in `run` mode, and allow ctrl+tab to switch to `window` mode
-bindsym $mod+d exec "rofi -modi run,window -show run"
+# Start rofi in combined mode, which allows user to either run new
+# app or switch to already running one
+bindsym $mod+d exec "rofi -show combi -combi-modi \"window,run\" -modi combi"
 
 # Set brightness
 bindcode 232 exec brightness-down
