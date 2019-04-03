@@ -198,3 +198,30 @@ bindcode 107 exec maim ~/data/Pictures/Screenshot-$(date +%Y-%m-%d-%H-%M-%S).png
 bindsym Shift+Print exec maim | xclip -selection clipboard -t image/png
 bindsym Ctrl+Print exec maim -i $(xdotool getactivewindow) ~/data/Pictures/Screenshot-$(date +%Y-%m-%d-%H-%M-%S).png
 bindsym Shift+Ctrl+Print exec maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+
+# Gaming mode (disable all the default alt shortcuts except for alt+f (toggle fullscreen) and alt+shift+q (kill process)
+# Allow some essentials keys as well, such as volume, brightness, or screenshots
+set $gamingMode "gaming_mode"
+bindsym $mod+g mode $gamingMode
+
+mode $gamingMode {
+	bindsym $mod+Escape mode default
+	bindsym $mod+f fullscreen toggle
+	bindsym $mod+Shift+q kill
+	# Set volume hotkeys
+	# 121 - mute, 122 - down, 123 - up
+	bindcode 121 exec pactl set-sink-volume 0 0
+	bindcode 122 exec pactl set-sink-volume 0 -5%
+	bindcode 123 exec pactl set-sink-volume 0 +5%
+
+	# Set brightness
+	# 232 - lower brightness, 233 - increase brightness
+	bindcode 232 exec brightness-down
+	bindcode 233 exec brightness-up
+
+	# Set screenshots
+	bindcode 107 exec maim ~/data/Pictures/Screenshot-$(date +%Y-%m-%d-%H-%M-%S).png
+	bindsym Shift+Print exec maim | xclip -selection clipboard -t image/png
+	bindsym Ctrl+Print exec maim -i $(xdotool getactivewindow) ~/data/Pictures/Screenshot-$(date +%Y-%m-%d-%H-%M-%S).png
+	bindsym Shift+Ctrl+Print exec maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+}
