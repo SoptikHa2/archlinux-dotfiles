@@ -36,7 +36,7 @@ bindsym $mod+Return exec terminator
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+#bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -178,6 +178,10 @@ exec --no-startup-id compton --daemon --backend xrender
 exec --no-startup-id feh --bg-center ~/data/Pictures/wallpaper.png
 # Start polybar
 exec --no-startup-id ~/.config/polybar/launch.sh
+# Set dmenu alternative (rofi)
+# Start rofi in `run` mode, and allow ctrl+tab to switch to `window` mode
+bindsym $mod+d exec "rofi -modi run,window -show run"
+
 # Set brightness
 bindcode 232 exec brightness-down
 bindcode 233 exec brightness-up
