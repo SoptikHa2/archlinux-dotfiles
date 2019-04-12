@@ -14,6 +14,10 @@ revert() {
 	xset dpms 0 0 0
 }
 trap revert HUP INT TERM
+
+# Send lock notification
+notify-send -u low -t 2000 "Locking down" "This computer will lock down in few seconds."
+
 xset +dpms dpms 0 0 5
 maim "$screenshot_temp"
 convert -blur 0x8 "$screenshot_temp" "$blurred_temp"
