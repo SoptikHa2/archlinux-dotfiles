@@ -1,0 +1,2 @@
+# Send warning notification when battery drops below 10%
+SUBSYSTEM=="power_supply", ATTR{status}=="Discharging", ATTR{capacity}=="[5-10]", RUN+="/usr/bin/notify-send --urgency=critical -t 30000 'LOW BATTERY' 'Battery charge is very low. Charge your computer NOW.'"
