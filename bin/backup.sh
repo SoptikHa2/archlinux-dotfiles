@@ -28,6 +28,7 @@ tar\
 	--exclude='/mnt/data/petr/Torrent'\
 	~/archlinux-dotfiles\
 	~/*.txt\
+	~/Documents\
 	'/mnt/data/petr'\
 	-zcf "/tmp/tmp-backupfile-"$filename_date".tgz"
 
