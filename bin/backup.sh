@@ -26,9 +26,12 @@ tar\
 	--exclude='/mnt/data/petr/Encrypted'\
 	--exclude='/mnt/data/petr/SteamLibrary'\
 	--exclude='/mnt/data/petr/Torrent'\
+	--exclude='/mnt/data/petr/data-collection'\
 	~/archlinux-dotfiles\
 	~/*.txt\
+	~/*.pdf\
 	~/Documents\
+	~/Downloads\
 	'/mnt/data/petr'\
 	-zcf "/tmp/tmp-backupfile-"$filename_date".tgz"
 
