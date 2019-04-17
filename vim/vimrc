@@ -56,3 +56,4 @@ endif
 " Set utf-8 by default
 set encoding=utf-8
 set fileencoding=utf-8
+set number
