@@ -102,3 +102,6 @@ export PATH=~/.local/bin:$PATH
 
 # Make xclip default selection clipboard
 alias xclip="xclip -selection clipboard"
+
+# Make vim the default editor
+export EDITOR=/usr/bin/vim
