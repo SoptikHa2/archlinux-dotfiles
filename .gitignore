@@ -1,1 +1,3 @@
 oh-my-zsh/cache
+# Ignore further muttrc changes
+mutt/muttrc
