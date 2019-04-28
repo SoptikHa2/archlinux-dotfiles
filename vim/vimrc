@@ -53,7 +53,17 @@ endif
 
 " CUSTOM
 
+filetype plugin indent on
+syntax on
+
 " Set utf-8 by default
 set encoding=utf-8
 set fileencoding=utf-8
 set number
+
+" Load plugins
+call plug#begin('~/.vim/plugged')
+
+Plug 'lervag/vimtex'
+
+call plug#end()
