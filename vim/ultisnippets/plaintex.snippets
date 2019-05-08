@@ -1,0 +1,15 @@
+# This cannot be in the tex snippets, as .tex
+# without tex header is still not considered a tex file.
+snippet article "documentclass{article" b
+\documentclass{article}
+
+\author{Petr Šťastný}
+\title{$1}
+\date{`date +%F`}
+
+\begin{document}
+
+$0
+
+\end{document}
+endsnippet

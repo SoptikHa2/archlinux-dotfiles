@@ -56,6 +56,12 @@ endif
 filetype plugin indent on
 syntax on
 
+" Remap kj to esc
+inoremap kj <Esc>
+" In command mode, remap kj to ctrl+c, as esc for some vi compatibility
+" reasons executes the command
+cnoremap kj <C-C>
+
 " Set utf-8 by default
 set encoding=utf-8
 set fileencoding=utf-8
@@ -64,6 +70,29 @@ set number
 " Load plugins
 call plug#begin('~/.vim/plugged')
 
+" Latex plugin, that uses mupdf as default pdf viewer
 Plug 'lervag/vimtex'
+let g:vimtex_view_method='mupdf'
+let g:tex_flavor='latex'
+let g:vimtex_quickfix_mode=0
+set conceallevel=1
+let g:tex_conceal='abdmgs'
+
+" Snippets pugin
+Plug 'sirver/ultisnips'
+let g:UtilSnipsExpandTrigger = '<tab>'
+let g:UtilSnipsJumpForwardTrigger = '<tab>'
+let g:UtilSnipsJumpBackwardTrigger = '<s-tab>'
+let g:UltiSnipsSnippetsDir = '~/.vim/ultisnippets'
+let g:UltiSnipsSnippetDirectories = ['ultisnippets']
 
 call plug#end()
+
+
+" Don't change appearance for concealed characters
+hi! link Conceal Normal
+
+" Correct spelling with Ctrl+L
+setlocal spell
+set spelllang=cs,en_gb
+inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
