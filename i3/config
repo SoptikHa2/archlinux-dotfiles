@@ -189,9 +189,9 @@ bindcode 233 exec brightness-up
 # Change keyboard
 bindsym $mod+Tab exec /usr/bin/change-keyboard
 # Set volume
-bindcode 121 exec pactl set-sink-volume 0 0
-bindcode 122 exec pactl set-sink-volume 0 -5%
-bindcode 123 exec pactl set-sink-volume 0 +5%
+bindcode 121 exec pavolume.sh --togmute
+bindcode 122 exec pavolume.sh --down
+bindcode 123 exec pavolume.sh --up
 # Lock computer
 #bindcode 133 exec lock-custom
 bindsym $mod+Ctrl+l exec lock-custom
@@ -230,3 +230,10 @@ mode $gamingMode {
 	bindsym Ctrl+Print exec maim -i $(xdotool getactivewindow) ~/data/Pictures/Screenshot-$(date +%Y-%m-%d-%H-%M-%S).png
 	bindsym Shift+Ctrl+Print exec maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
 }
+
+# Define multimonitor setup
+# Toggle workspace between monitors
+bindsym $mod+x move workspace to output right
+
+# Lock screen when lid is closed
+exec --no-startup-id xss-lid -- lock-custom
