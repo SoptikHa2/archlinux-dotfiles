@@ -10,10 +10,10 @@
 
 # To allow easy usage with polybar, this scripts can output graphical format, if passed as first argument:
 # 0 (or nothing) => (see example)
-# 1 => 🔇
-# 1 => 🔈
+# 1 => 
+# 1 => 
 # 2 => 60%
-# 3 => 🔈 12%
+# 3 =>  12%
 
 # This script is based on https://customlinux.blogspot.com/2013/02/pavolumesh-control-active-sink-volume.html
 
@@ -47,11 +47,11 @@ getCurMutedStatus
 if [ $display -eq 0 ]; then
 	echo "$cur_muted,$cur_vol"
 elif [ $display -eq 1 ]; then
-	if [ $cur_muted -eq 0 ]; then echo "🔈"
-	elif [ $cur_muted -eq 1 ]; then echo "🔇"; fi
+	if [ $cur_muted -eq 0 ]; then echo ""
+	elif [ $cur_muted -eq 1 ]; then echo ""; fi
 elif [ $display -eq 2 ]; then
 	echo "$cur_vol%"
 elif [ $display -eq 3 ]; then
-	if [ $cur_muted -eq 0 ]; then echo "🔈 $cur_vol%"
-	elif [ $cur_muted -eq 1 ]; then echo "🔇 $cur_vol%"; fi
+	if [ $cur_muted -eq 0 ]; then echo " $cur_vol%"
+	elif [ $cur_muted -eq 1 ]; then echo " $cur_vol%"; fi
 fi
