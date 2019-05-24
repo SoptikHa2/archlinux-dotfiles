@@ -106,3 +106,9 @@ alias xclip="xclip -selection clipboard"
 
 # Make vim the default editor
 export EDITOR=/usr/bin/vim
+
+# Disable .net core telemetry
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
+
+# Add colors
+alias cat="lolcat"
