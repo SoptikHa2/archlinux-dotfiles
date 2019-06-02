@@ -57,7 +57,7 @@ label-focused-padding = 2
 [module/muted]
 type = custom/script
 exec = get-volume.sh 1
-interval = 2
+interval = 1
 label-padding = 2
 
 

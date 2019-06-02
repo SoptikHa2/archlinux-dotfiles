@@ -1,8 +1,86 @@
+snippet article "documentclass article" b
+\documentclass{article}
+
+\title{$1}
+\author{Petr Šťastný}
+\date{`date +%F`}
+
+\begin{document}
+
+\maketitle
+
+$0
+
+\end{document}
+endsnippet
+
+snippet cheatsheet "math cheatsheet template" b
+\documentclass[twocolumn]{article}
+
+\usepackage[margin=2cm, top=0cm]{geometry}
+
+\title{$1}
+\author{Petr Šťastný}
+\date{`date +%F`}
+
+\begin{document}
+
+\maketitle
+
+$0
+
+\end{document}
+endsnippet
+
+snippet beamer "documentclass beamer" b
+\documentclass{beamer}
+
+\title{$1}
+\author{Petr Šťastný}
+\date{`date +%F`}
+
+\begin{document}
+
+\maketitle
+
+$0
+
+\end{document}
+endsnippet
+
+#┌────────┐
+#│ BASICS │
+#└────────┘
+
 snippet beg "begin{} / end{}" bA
 \begin{$1}
 	$0
 \end{$1}
 endsnippet
+
+#┌────────┐
+#│ BEAMER │
+#└────────┘
+
+snippet frame "begin end frame" b
+\begin{frame}
+	\frametitle{$1}
+	$0
+\end{frame}
+endsnippet
+
+snippet beamerimg "beamer slide with image" b
+\begin{columns}
+	\column{\dimexpr\linewidth-5cm-3mm}
+	$0
+	\column{5cm}
+	\includegraphics[width=5cm]{$1}
+\end{columns}
+endsnippet
+
+#┌──────┐
+#│ MATH │
+#└──────┘
 
 # Inline math
 snippet fm "Math" wA
@@ -22,7 +100,7 @@ $1
 endsnippet
 
 # Subscript
-snippet '([A-Za-z])(\d)' "auto subscript" wrA
+snippet '([A-Za-z])(\d)' "auto subscript" b
 `!p snip.rv = match.group(1)`_`!p snip.rv = match.group(2)`
 endsnippet
 snippet '([A-Za-z])_(\d\d)' "auto subscript2" wrA
@@ -40,4 +118,12 @@ snippet // "Fraction" iA
 endsnippet
 snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)/' "Fraction" wrA
 \\frac{`!p snip.rv = match.group(1)`}{$1}$0
+endsnippet
+
+#┌────────────┐
+#│ CHEATSHEET │
+#└────────────┘
+
+snippet rule "create horizontal line across column" b
+\rule{\columnwidth}{0.4pt}
 endsnippet

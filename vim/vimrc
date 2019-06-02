@@ -85,7 +85,6 @@ let g:UtilSnipsJumpForwardTrigger = '<tab>'
 let g:UtilSnipsJumpBackwardTrigger = '<s-tab>'
 let g:UltiSnipsSnippetsDir = '~/.vim/ultisnippets'
 let g:UltiSnipsSnippetDirectories = ['ultisnippets']
-
 call plug#end()
 
 
@@ -93,6 +92,6 @@ call plug#end()
 hi! link Conceal Normal
 
 " Correct spelling with Ctrl+L
-setlocal spell
-set spelllang=cs,en_gb
-inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+"setlocal spell
+"set spelllang=cs,en_gb
+"inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
