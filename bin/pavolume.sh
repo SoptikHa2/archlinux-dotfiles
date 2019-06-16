@@ -1,152 +1,76 @@
 #!/bin/bash
 
-# finds the active sink for pulse audio and increments the volume. useful when you have multiple audio outputs and have a key bound to vol-up and down
+# Call with:
+# --down to down volume $inc percent (down to 0%)
+# --up to up volume $inc percent (up to 100%)
+# --mute to mute
+# --unmute to unmute
+# --togmute to toggle mute
+inc=2
 
-#┌────────┐
-#│ SOURCE │
-#└────────┘
-# https://customlinux.blogspot.com/2013/02/pavolumesh-control-active-sink-volume.html
 
-osd='no'
-inc='5'
-capvol='yes'
-maxvol='200'
-tmpfile='/tmp/pasink.tmp'
-autosync='yes'
 
-active_sink=`pacmd list-sinks |awk '/* index:/{print $3}'`
-limit=$(expr 100 - ${inc})
-maxlimit=$(expr ${maxvol} - ${inc})
+
+activeSink=$(pacmd list-sinks |awk '/* index:/{print $3}')
+upLimit=$((100 - ${inc}))
+curVol=$(pacmd list-sinks | grep -A 15 'index: 1' | grep '[^base ]volume:' | cut -d: -f 3 | cut -d/ -f 2 | grep -o -E '[0-9]+')
+curMutedStatus=$(pacmd list-sinks |grep -A 15 'index: '${activeSink}'' |awk '/muted/{ print $2 }') # yes|no
 
 function volUp {
-
-        getCurVol
-
-        if [ ${capvol} = 'yes' ]
-        then
-                if [ ${curVol} -le 100 -a ${curVol} -ge ${limit} ]
-                then
-                        pactl set-sink-volume ${active_sink} 100%
-                elif [ ${curVol} -lt ${limit} ]
-                then
-                        pactl set-sink-volume ${active_sink} +${inc}%
-                fi
-        elif [ ${curVol} -le ${maxvol} -a ${curVol} -ge ${maxlimit} ]
-        then
-                pactl set-sink-volume ${active_sink} ${maxvol}%
-        elif [ ${curVol} -lt ${maxlimit} ]
-        then
-                pactl set-sink-volume ${active_sink} +${inc}%
-        fi
-
-        getCurVol
-
-        if [ ${osd} = 'yes' ]
-        then
-                qdbus org.kde.kded /modules/kosd showVolume ${curVol} 0
-        fi
-
-        if [ ${autosync} = 'yes' ]
-        then
-                volSync
-        fi
+	if [ $curMutedStatus = 'yes' ]
+	then
+		volUnmute
+	elif [ $upLimit -ge $curVol ]
+	then
+		pactl set-sink-volume ${activeSink} +${inc}%
+	else
+		pactl set-sink-volume ${activeSink} 100%
+	fi
 }
 
 function volDown {
-
-        pactl set-sink-volume ${active_sink} -${inc}%
-	echo Voldown at ${active_sink} changing ${inc}
-        getCurVol
-
-        if [ ${osd} = 'yes' ]
-        then
-                qdbus org.kde.kded /modules/kosd showVolume ${curVol} 0
-        fi
-
-        if [ ${autosync} = 'yes' ]
-        then
-                volSync
-        fi
-
-}
-
-function getSinkInputs {
-
-        inputs=`pacmd list-sink-inputs |grep -B 4 'sink: '${1}' ' |awk '/index:/{print $2}' >${tmpfile}`
-        input_array=`cat $tmpfile`
-}
-
-function volSync {
-
-        getSinkInputs ${active_sink}
-        getCurVol
-
-        for each in ${input_array}
-        do
-                pactl set-sink-input-volume ${each} ${curVol}%
-        done
-
-}
-
-function getCurVol {
-
-        curVol=`pacmd list-sinks |grep -A 15 'index: '${active_sink}'' |grep 'volume:' |egrep -v 'base volume:' |awk -F : '{print $3}' |grep -o -P '.{0,3}%'|sed s/.$// |tr -d ' '`
-
+	if [ $curMutedStatus = 'yes' ]
+	then
+		volUnmute
+	elif [ $curVol -ge $inc ]
+	then
+		pactl set-sink-volume ${activeSink} -${inc}%
+	else
+		pactl set-sink-volume ${activeSink} 0%
+	fi
 }
 
 function volMute {
-
-        case "$1" in
-                mute)
-                        pactl set-sink-mute ${active_sink} 1
-                        curVol=0
-                        status=1
-                ;;
-                unmute)
-                        pactl set-sink-mute ${active_sink} 0
-                        getCurVol
-                        status=0
-                ;;
-        esac
-
-        if [ ${osd} = 'yes' ]
-        then
-                qdbus org.kde.kded /modules/kosd showVolume ${curVol} ${status}
-        fi
-
+	pactl set-sink-mute ${activeSink} 1
 }
 
-function volMuteStatus {
-
-        curStatus=`pacmd list-sinks |grep -A 15 'index: '${active_sink}'' |awk '/muted/{ print $2}'`
-
-        if [ ${curStatus} = 'yes' ]
-        then
-                volMute unmute
-        else
-                volMute mute
-        fi
-
+function volUnmute {
+	pactl set-sink-mute ${activeSink} 0
 }
 
+function volToggleMute {
+	if [ $curMutedStatus = 'yes' ]
+	then
+		volUnmute
+	else
+		volMute
+	fi
+}
 
 case "$1" in
-        --up)
-                volUp
-        ;;
-        --down)
-                volDown
-        ;;
-        --togmute)
-                volMuteStatus
-        ;;
-        --mute)
-                volMute mute
-        ;;
-        --unmute)
-                volMute unmute
-        ;;
-        --sync)
-                volSync
-        ;;
+	--up)
+		volUp
+		;;
+	--down)
+		volDown
+		;;
+	--mute)
+		volMute
+		;;
+	--unmute)
+		volUnmute
+		;;
+	--togmute)
+		volToggleMute
+		;;
 esac
