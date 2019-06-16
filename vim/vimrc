@@ -65,7 +65,6 @@ cnoremap kj <C-C>
 " Set utf-8 by default
 set encoding=utf-8
 set fileencoding=utf-8
-set number
 
 " Load plugins
 call plug#begin('~/.vim/plugged')
@@ -85,11 +84,23 @@ let g:UtilSnipsJumpForwardTrigger = '<tab>'
 let g:UtilSnipsJumpBackwardTrigger = '<s-tab>'
 let g:UltiSnipsSnippetsDir = '~/.vim/ultisnippets'
 let g:UltiSnipsSnippetDirectories = ['ultisnippets']
+
+" Colored parenthesis
+Plug 'junegunn/rainbow_parentheses.vim'
 call plug#end()
 
 
-" Don't change appearance for concealed characters
+" Don't change appearance for concealed characters (LaTeX)
 hi! link Conceal Normal
+
+" Autoenable RainbowParentheses on lisp files
+augroup rainbow_lisp
+	autocmd!
+	autocmd FileType lisp,clojure,scheme RainbowParentheses
+augroup END
+
+" Hybrid line numbers
+set number relativenumber
 
 " Correct spelling with Ctrl+L
 "setlocal spell
