@@ -1,8 +1,0 @@
-[Unit]
-Description=Start xss-lock, which launches i3lock when the computer starts sleeping/hybernating.
-
-[Service]
-ExecStart=xss-lock -- /usr/bin/lock-custom
-
-[Install]
-WantedBy=default.target

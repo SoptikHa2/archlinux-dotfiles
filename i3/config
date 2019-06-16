@@ -237,3 +237,9 @@ bindsym $mod+x move workspace to output right
 
 # Lock screen when lid is closed
 exec --no-startup-id xss-lid -- lock-custom
+
+# Start xss-lock and udiskie
+# xss-lock locks screen when laptop is supsended
+# udiskie automounts USBs
+exec --no-startup-id xss-lock -- /usr/bin/lock-custom
+exec --no-startup-id udiskie
