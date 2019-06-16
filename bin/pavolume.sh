@@ -13,7 +13,7 @@ inc=2
 
 activeSink=$(pacmd list-sinks |awk '/* index:/{print $3}')
 upLimit=$((100 - ${inc}))
-curVol=$(pacmd list-sinks | grep -A 15 'index: 1' | grep '[^base ]volume:' | cut -d: -f 3 | cut -d/ -f 2 | grep -o -E '[0-9]+')
+curVol=$(pacmd list-sinks | grep -A 15 'index: '${activeSink}'' | grep '[^base ]volume:' | cut -d: -f 3 | cut -d/ -f 2 | grep -o -E '[0-9]+')
 curMutedStatus=$(pacmd list-sinks |grep -A 15 'index: '${activeSink}'' |awk '/muted/{ print $2 }') # yes|no
 
 function volUp {
