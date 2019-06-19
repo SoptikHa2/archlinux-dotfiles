@@ -6,7 +6,7 @@
 # --mute to mute
 # --unmute to unmute
 # --togmute to toggle mute
-inc=2
+inc=5
 
 
 
