@@ -20,7 +20,7 @@ notify-send -u low -t 2000 "Locking down" "This computer will lock down in few s
 
 xset +dpms dpms 0 0 5
 maim "$screenshot_temp"
-convert -blur 0x8 "$screenshot_temp" "$blurred_temp"
+convert -scale 10% -scale 1000% "$screenshot_temp" "$blurred_temp"
 convert "$blurred_temp" "/home/petr/.config/overlay.png" -geometry "70%x70%-270-300" -gravity center -composite "$composite_temp"
 i3lock -i "$composite_temp" -ue
 revert
