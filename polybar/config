@@ -17,7 +17,7 @@ foreground = ${colors.foreground}
 ; MODULES
 modules-left = i3_workspaces
 modules-center = window_name
-modules-right = muted battery keyboard datetime
+modules-right = wifi muted battery keyboard datetime
 
 font-0 = fixed:pixelsize=12;1
 font-1 = FontAwesome:style=Regular:size=12
@@ -51,6 +51,14 @@ label-focused-underline = ${colors.primary}
 label-focused-background = ${colors.background_alt}
 label-focused-padding-left = 1
 label-focused-padding = 2
+
+
+; Check if device is connected to wifi and internet
+[module/wifi]
+type = custom/script
+exec = internet-status.sh --unicode 2>/dev/null
+interval = 60
+label-padding = 2
 
 
 ; Show if sound is muted
