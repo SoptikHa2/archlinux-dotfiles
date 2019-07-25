@@ -60,7 +60,7 @@ elif [ $print_option -eq 1 ]; then
 	elif [ $return_code -eq 1 ]; then
 		echo "?"
 	elif [ $return_code -eq 2 ]; then
-		echo ""
+		echo " "
 	fi
 else
 	(>&2 echo "Unknown print option $print_option")
