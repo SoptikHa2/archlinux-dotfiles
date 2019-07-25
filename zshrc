@@ -104,11 +104,18 @@ export PATH=~/.local/bin:$PATH
 # Make xclip default selection clipboard
 alias xclip="xclip -selection clipboard"
 
-# Make vim the default editor
-export EDITOR=/usr/bin/vim
+# Make neovim the default editor
+export EDITOR=/usr/bin/nvim
 
 # Disable .net core telemetry
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
-# Add colors
-alias cat="lolcat"
+vimfork () {
+	vim -c "!zsh -c \"source ~/.zshrc; vimfork\""
+}
+
+alias nano="feh \"/home/petr/nano.jpg\""
+
+# Yay nvim
+alias vim="nvim"
+alias truevim="/usr/bin/vim"
