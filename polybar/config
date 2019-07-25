@@ -57,7 +57,7 @@ label-focused-padding = 2
 [module/wifi]
 type = custom/script
 exec = internet-status.sh --unicode 2>/dev/null
-interval = 60
+interval = 30
 label-padding = 2
 
 
@@ -153,3 +153,5 @@ animation-charging-3 = 
 animation-charging-4 = 
 ; Framerate in milliseconds
 animation-charging-framerate = 1000
+
+; vim:ft=dosini
