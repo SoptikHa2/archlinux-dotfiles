@@ -14,16 +14,16 @@ if [ ! -f ~/.config/current-keyboard-layout.conf ]; then
 fi
 
 # If there is 'cz' in the file, change it to us and viceversa
-if [ $(cat ~/.config/current-keyboard-layout.conf) == 'cz' ]; then
+if [ "$(cat ~/.config/current-keyboard-layout.conf)" == 'cz' ]; then
 	# set keyboard to us
 	setxkbmap us
 	echo 'us' > ~/.config/current-keyboard-layout.conf
-elif [ $(cat ~/.config/current-keyboard-layout.conf) == 'us' ]; then
+elif [ "$(cat ~/.config/current-keyboard-layout.conf)" == 'us' ]; then
 	# set keyboard to cz, qwerty
 	setxkbmap cz -variant qwerty
 	echo 'cz' > ~/.config/current-keyboard-layout.conf
 else
-	(>&2 echo "Unknown keyboard layout: "$(cat ~/.config/current-keyboard-layout.conf))
+	(>&2 echo "Unknown keyboard layout: $(cat ~/.config/current-keyboard-layout.conf)")
 	exit 1
 fi
 

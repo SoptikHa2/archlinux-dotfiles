@@ -1,8 +1,8 @@
 #!/bin/bash
 # Create new ASP.Net Core project with docker
 
-dotnet new webapi -o $1 #--no-https
-cd $1
+dotnet new webapi -o "$1" #--no-https
+cd "$1" || exit
 
 echo "--------------------------------"
 echo "FOLLOW THIS TO SETUP DOCKERFILE:"

@@ -17,7 +17,7 @@
 
 # This script is based on https://customlinux.blogspot.com/2013/02/pavolumesh-control-active-sink-volume.html
 
-active_sink=`pacmd list-sinks |awk '/* index:/{print $3}'`
+active_sink=$(pacmd list-sinks |awk '/* index:/{print $3}')
 display=0
 
 # Load display type based on argument
@@ -27,11 +27,11 @@ fi
 
 
 function getCurVol {
-	cur_vol=`pacmd list-sinks |grep -A 15 'index: '${active_sink}'' |grep 'volume:' |egrep -v 'base volume:' |awk -F : '{print $3}' |grep -o -P '.{0,3}%'|sed s/.$// |tr -d ' '`
+	cur_vol=$(pacmd list-sinks |grep -A 15 "index: ${active_sink}" |grep 'volume:' |grep -v -E 'base volume:' |awk -F : '{print $3}' |grep -o -P '.{0,3}%'|sed s/.$// |tr -d ' ')
 }
 
 function getCurMutedStatus {
-	cur_muted=`pacmd list-sinks |grep -A 15 'index: '${active_sink}'' |grep 'muted:' |awk -F : '{print $2}'`
+	cur_muted=$(pacmd list-sinks |grep -A 15 "index: ${active_sink}" |grep 'muted:' |awk -F : '{print $2}')
 	if [ "$cur_muted" == " yes" ]
 	then
 		cur_muted=1
@@ -44,14 +44,14 @@ getCurVol
 getCurMutedStatus
 
 
-if [ $display -eq 0 ]; then
+if [ "$display" -eq 0 ]; then
 	echo "$cur_muted,$cur_vol"
-elif [ $display -eq 1 ]; then
+elif [ "$display" -eq 1 ]; then
 	if [ $cur_muted -eq 0 ]; then echo ""
 	elif [ $cur_muted -eq 1 ]; then echo ""; fi
-elif [ $display -eq 2 ]; then
+elif [ "$display" -eq 2 ]; then
 	echo "$cur_vol%"
-elif [ $display -eq 3 ]; then
+elif [ "$display" -eq 3 ]; then
 	if [ $cur_muted -eq 0 ]; then echo " $cur_vol%"
 	elif [ $cur_muted -eq 1 ]; then echo " $cur_vol%"; fi
 fi

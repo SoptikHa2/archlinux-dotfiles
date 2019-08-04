@@ -18,10 +18,10 @@
 # Return code:
 # <see numbers>
 
-if [ ! -e $1 ]; then # if $1 is set
-	if [ $1 = "--numbers" ]; then
+if [ ! -e "$1" ]; then # if $1 is set
+	if [ "$1" = "--numbers" ]; then
 		print_option=0
-	elif [ $1 = "--unicode" ]; then
+	elif [ "$1" = "--unicode" ]; then
 		print_option=1
 	else
 		(>&2 echo "Unknown option: $1")
@@ -34,7 +34,7 @@ fi
 
 
 # Check netctl for active connections
-active_connection_count=$(netctl list | grep '*' -c)
+active_connection_count=$(netctl list | grep '\*' -c)
 
 # Try to ping mozilla, with 1 second deadline
 if (ping mozilla.org -w 1 >/dev/null); then
@@ -45,7 +45,7 @@ fi
 
 # And get code corresponding to data we gathered
 return_code=2
-if [ $active_connection_count -ge 1 ]; then
+if [ "$active_connection_count" -ge 1 ]; then
 	return_code=1
 	if [ $ping_succ -eq 1 ]; then
 		return_code=0
