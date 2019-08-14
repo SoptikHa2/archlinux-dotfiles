@@ -2,8 +2,9 @@
 set clipboard+=unnamedplus
 " Hybrit line numbers
 set number relativenumber
-colorscheme peachpuff
-
+"colorscheme peachpuff
+" Remember last scroll position
+autocmd BufReadPost * if @% !~# '\.git[\/\\]COMMIT_EDITMSG$' && line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif 
 
 "┌────────────────┐
 "│ KEYBOARD REMAP │
@@ -13,7 +14,6 @@ inoremap kj <Esc>
 cnoremap kj <C-C> 
 " Lets save without leaving insert mode
 inoremap <C-S> <Esc>:w<CR>a
-inoremap lk <Esc>:w<CR>a
 " And save after going to another line in insert mode
 "inoremap <CR> <Esc>:w<CR>a<CR>
 "inoremap <Up> <Esc>:w<CR>a<Up>
@@ -59,6 +59,12 @@ Plug 'maximbaz/lightline-ale'
 
 " Deoplete (autocompletion)
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+" TabNine (autocompletion)
+Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
+
+" Racer (autocompletion)
+Plug 'racer-rust/vim-racer'
 
 call plug#end()
 
@@ -110,9 +116,15 @@ let g:lightline.active = { 'right': [[ 'linter_checking', 'linter_errors', 'lint
 
 " Deoplete
 let g:deoplete#enable_at_startup = 1
+" '_': ['ale', 'tabnine'],
 call deoplete#custom#option('sources', {
-\ '_': ['ale'],
+\ '_': ['ale', 'tabnine'],
 \})
+
+" Close preview window after autocompletion is done
+autocmd CompleteDone * silent! pclose!
+" Remap Ctrl+Space to Ctrl+N (autocomplete select/next)
+inoremap <C-Space> <C-N>
 
 " Make ALE work properly with rust
 let g:ale_linters = {'rust': ['rls']}
@@ -121,5 +133,5 @@ let g:ale_fixers = { 'rust': ['rustfmt']}
 let g:ale_fix_on_save = 1
 let g:ale_lint_on_text_changed = 1
 " And change colors
-highlight ALEWarning ctermbg=DarkMagenta
+highlight ALEWarning ctermbg=DarkYellow
 highlight ALEError ctermbg=DarkRed
