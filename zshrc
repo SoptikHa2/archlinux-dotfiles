@@ -53,7 +53,7 @@ ZSH_THEME="mrtazz"
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="yyyy-mm-dd"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -119,3 +119,11 @@ alias nano="feh \"/home/petr/nano.jpg\""
 # Yay nvim
 alias vim="nvim"
 alias truevim="/usr/bin/vim"
+
+# Git aliases
+alias ga="git add"
+alias gc="git commit"
+alias gs="git status"
+alias gd="git diff"
+alias gds="git diff --staged"
+alias gaa="git add -u"
