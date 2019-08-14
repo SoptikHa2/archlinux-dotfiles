@@ -1,0 +1,30 @@
+/*
+ *
+ * ┌─────────────────┐
+ * │ TREE STYLE TABS │
+ * └─────────────────┘
+ *
+ */ 
+
+/* Only shrink tree-style tab to icons on small screen */
+@media (max-width: 1000px) {
+	#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] {
+	  overflow: hidden;
+	  min-width: 50px;
+	  max-width: 50px;
+	  transition: all 0.2s ease;
+	  border-right: 1px solid #0c0c0d;
+	  z-index: 2;
+	}
+
+	#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:hover,
+	#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar {
+	  min-width: 320px !important;
+	  max-width: 320px !important;
+	}
+}
+
+/*Hide the tabs at the top of the window*/
+#TabsToolbar {
+	visibility: collapse;
+}
