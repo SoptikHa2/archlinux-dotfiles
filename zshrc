@@ -127,3 +127,16 @@ alias gs="git status"
 alias gd="git diff"
 alias gds="git diff --staged"
 alias gaa="git add -u"
+
+# Misc aliases
+alias please="sudo"
+alias wifi="please wifi-menu"
+
+# Check for cli ads
+# https://old.reddit.com/r/programming/comments/cus0zu/a_3mil_downloads_per_month_javascript_library/
+# 
+(
+if [ $(curl https://raw.githubusercontent.com/feross/funding/master/messages.json 2>/dev/null | wc -c) -gt 3 ]; then
+	echo "ADS detected. https://raw.githubusercontent.com/feross/funding/master/messages.json"
+fi
+) &&

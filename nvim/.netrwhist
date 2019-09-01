@@ -1,10 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
-let g:netrw_dirhist_1='/home/petr/archlinux-dotfiles/nvim/site'
-let g:netrw_dirhist_2='/home/petr/archlinux-dotfiles/nvim/site/autoload'
-let g:netrw_dirhist_3='/home/petr/.config/nvim'
-let g:netrw_dirhist_4='/home/petr/archlinux-dotfiles/polybar'
-let g:netrw_dirhist_5='/home/petr'
-let g:netrw_dirhist_6='/home/petr/archlinux-dotfiles'
-let g:netrw_dirhist_7='/mnt/data/petr/Programming/Dart/Web/bakalari_webapp/web/webapp/tools'
-let g:netrw_dirhist_8='/home/petr/archlinux-dotfiles/polybar'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/petr/archlinux-dotfiles'
+let g:netrw_dirhist_2='/home/petr/archlinux-dotfiles/.git'
+let g:netrw_dirhist_3='/home/petr/archlinux-dotfiles'
+let g:netrw_dirhist_4='/home/petr/archlinux-dotfiles/nvim'

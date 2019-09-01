@@ -52,6 +52,9 @@ if [ "$active_connection_count" -ge 1 ]; then
 	fi
 fi
 
+# TODO: Add signal strength indicator
+# cat /proc/net/wireless | grep -Po "\-\d+" | head -1
+
 if [ $print_option -eq 0 ]; then
 	echo $return_code
 elif [ $print_option -eq 1 ]; then

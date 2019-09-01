@@ -29,6 +29,15 @@ autocmd FileType rust cmap make make<Space>run
 nmap <F12> :ALEGoToDefinition<CR>
 imap <F12> <Esc>:ALEGoToDefinition<CR>
 
+" F7 => previous file
+" F8 => next file
+" (open new file with :tabe <filename>)
+" TODO: Doesn't work
+imap <Char-220> <Esc>:tabp<CR>
+imap <Char-133> <Esc>:tabn<CR>
+nmap <Char-220> :tabp<CR>
+nmap <Char-133> :tabn<CR>
+
 "┌─────────┐
 "│ PLUGINS │
 "└─────────┘
@@ -61,7 +70,7 @@ Plug 'maximbaz/lightline-ale'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " TabNine (autocompletion)
-Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
+"Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
 
 " Racer (autocompletion)
 Plug 'racer-rust/vim-racer'
@@ -118,7 +127,7 @@ let g:lightline.active = { 'right': [[ 'linter_checking', 'linter_errors', 'lint
 let g:deoplete#enable_at_startup = 1
 " '_': ['ale', 'tabnine'],
 call deoplete#custom#option('sources', {
-\ '_': ['ale', 'tabnine'],
+\ '_': ['ale'],
 \})
 
 " Close preview window after autocompletion is done
