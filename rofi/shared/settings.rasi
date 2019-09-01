@@ -1,0 +1,2 @@
+/* Imports currently selected themes and defines common properties */
+@import "theme-red-grey.rasi"

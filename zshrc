@@ -129,6 +129,7 @@ alias gds="git diff --staged"
 alias gaa="git add -u"
 
 # Misc aliases
+alias sudo="sudo -E"
 alias please="sudo"
 alias wifi="please wifi-menu"
 

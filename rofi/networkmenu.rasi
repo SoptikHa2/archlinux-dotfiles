@@ -1,0 +1,28 @@
+/*
+ * This theme is option menu for three items.
+ */
+
+@import "shared/settings.rasi"
+* {
+  font: @font-big;
+}
+
+#window {
+  children: [ horibox ];
+  width: 720px;
+}
+#horibox {
+  children: [ listview ];
+}
+#listview {
+  layout: horizontal;
+}
+
+#element {
+  width: 220px;
+  font: @icon-font;
+}
+
+/* 
+ * vim:ft=idl
+ */
