@@ -3,3 +3,5 @@ oh-my-zsh/cache/zsh-update
 # Ignore further muttrc changes
 mutt/muttrc
 nvim/plugged
+# Ignore further secret file changes
+bin/secret
