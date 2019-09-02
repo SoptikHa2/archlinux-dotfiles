@@ -51,14 +51,12 @@ case "$chosen" in
 		cancelled=false
 		;;
 	"$option_next_to_each_other")
-		echo next as
 		xrandr --output "$internal" --auto
 		xrandr --output "$external" --auto
 		xrandr --output "$external" --right-of "$internal"
 		cancelled=false
 		;;
 	"$option_inside_each_other")
-		echo inside
 		xrandr --output "$internal" --auto
 		xrandr --output "$external" --auto
 		xrandr --output "$external" --mode "1920x1080" --same-as "$internal"
