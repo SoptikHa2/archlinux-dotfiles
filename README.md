@@ -26,7 +26,6 @@ Archlinux i3 dotfiles
 ## Useful aliases
 |Alias|Real command|
 |---|---|
-|`sudo`|`sudo -E` (preserve environment)|
 |`please`|`sudo`|
 |`ga`|`git add`|
 |`gc`|`git commit`|
