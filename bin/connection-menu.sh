@@ -9,7 +9,7 @@ option_wifi=""
 option_ethernet=""
 option_vpn=""
 
-chosen="$(printf "%s\n%s\n%s" "$option_wifi" "$option_ethernet" "$option_vpn" | rofi -theme "networkmenu.rasi" -dmenu)"
+chosen="$(echo -e "$option_wifi\n$option_ethernet\n$option_vpn" | rofi -theme "networkmenu.rasi" -dmenu)"
 
 case $chosen in
 	$option_wifi)

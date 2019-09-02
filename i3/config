@@ -175,7 +175,7 @@ gaps outer -10
 # Start compton (with xrender backend)
 exec --no-startup-id compton --daemon --backend xrender
 # Set background
-exec --no-startup-id feh --bg-fill ~/data/Pictures/wallpaper.png
+exec --no-startup-id feh --bg-center ~/data/Pictures/wallpaper.png
 # Start polybar
 exec --no-startup-id ~/.config/polybar/launch.sh
 # Set dmenu alternative (rofi)
@@ -205,6 +205,7 @@ bindsym Ctrl+Print exec maim -i $(xdotool getactivewindow) ~/data/Pictures/Scree
 bindsym Shift+Ctrl+Print exec maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
 # Custom menus
 bindsym $mod+w exec connection-menu
+bindsym $mod+t exec multimonitor-setup
 
 # Gaming mode (disable all the default alt shortcuts except for alt+f (toggle fullscreen) and alt+shift+q (kill process)
 # Allow some essentials keys as well, such as volume, brightness, or screenshots
