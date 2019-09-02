@@ -9,7 +9,7 @@ Archlinux i3 dotfiles
 |`<A-Q>`|Kills currently focused program|
 |`<A-w>`|Opens wireless menu in rofi: switch wifi/ethernet, connect to VPN|
 |`<A-t>`|Opens monitor setup menu in rofi: switch between monitors, or combine them together in multiple ways|
-|`<A-tab>`|Switch keyboards (currently: US and Czech Qwerty)|
+|`<A-Tab>`|Switch keyboards (currently: US and Czech Qwerty)|
 |`<A-g>`|Enter gaming mode - most hotkeys are disabled (incl. window/workspace i3 hotkeys) (except kill, fullscreen, and exit gaming mode)|
 |`<A-Esc>`|Exit gaming mode|
 |`<A-f>`|Toggle fullscreen on currently focused window|
