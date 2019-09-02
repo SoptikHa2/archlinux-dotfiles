@@ -5,21 +5,26 @@
 @import "shared/settings.rasi"
 * {
   font: @font-big;
+  normal-background: @background-color;
+  alternate-normal-background: @background-color;
+  selected-normal-background: @background-color;
 }
 
 #window {
   children: [ horibox ];
-  width: 720px;
+  width: 1040px;
+  height: 500px;
 }
 #horibox {
   children: [ listview ];
 }
 #listview {
   layout: horizontal;
+  padding: 200px 0px 0px 200px;
 }
 
 #element {
-  width: 220px;
+  width: 240px;
   font: @icon-font;
 }
 
