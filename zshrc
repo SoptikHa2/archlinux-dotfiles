@@ -96,10 +96,14 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Source secret variables
+source ~/archlinux-dotfiles/bin/secret
 
 # Add rust path
 source ~/.cargo/env
 export PATH=~/.local/bin:$PATH
+# Add ruby path
+export PATH=/home/petr/.gem/ruby/2.6.0/bin:$PATH
 
 # Make xclip default selection clipboard
 alias xclip="xclip -selection clipboard"
@@ -132,3 +136,6 @@ alias gaa="git add -u"
 alias sudo="sudo -E"
 alias please="sudo"
 alias wifi="please wifi-menu"
+
+# Remote Desktop alias
+alias remote="xfreerdp -u $rdesktop_username -d '$rdesktop_domain' /dynamic-resolution -f $rdesktop_pcname"
