@@ -1,7 +1,8 @@
 #!/bin/bash
 
 internal="eDP-1-1"
-external="HDMI-0"
+# Take list of monitors, and filter out the initial heading AND first monitor entry (which SHOULD be $internal). Then take one monitor and get it's name.
+external=$(xrandr --listmonitors | tail -n +3 | head -1 | cut -d' ' -f3 | egrep -o '[a-zA-Z]{1}[a-zA-Z0-9-]*') # HDMI-0
 
 # Allow internal/external override with --internal and --external
 for i in "$@"
