@@ -35,11 +35,18 @@ Archlinux i3 dotfiles
 |`gaa`|`git add -u` (adds all tracked modified files)|
 |`wifi`|`please wifi-menu`|
 
+## Tips & tricks
+|Trick|Description|
+|---|---|
+| FF config: `full-screen-api.ignore-widgets = true` | Fullscreen videos are not really fullscreen, but are borderless intead. See first screenshot, but it's quite nice feature. |
+
 ## Screenshots
-*Note: screenshots are old.*
+
+Borderless fullscreen video in Firefox (!, not via youtubedl)
+![Borderless fullscreen video in Firefox](https://raw.githubusercontent.com/SoptikHa2/archlinux-dotfiles/master/screenshots/firefox-video-fullscreen-in-window.png)
 
 Neofetch and firefox:
 ![Screenshot Archlinux Rice i3 - Neofetch](https://raw.githubusercontent.com/SoptikHa2/archlinux-dotfiles/master/screenshots/firefox-neofetch.png)
 ---
 Locked with i3lock and custom image:
-![Screenshot Archlinux Rice i3 - locked](https://raw.githubusercontent.com/SoptikHa2/archlinux-dotfiles/master/screenshots/locked.png)
+![Screenshot Archlinux Rice i3 - locked](https://raw.githubusercontent.com/SoptikHa2/archlinux-dotfiles/master/lockscreen.png)
