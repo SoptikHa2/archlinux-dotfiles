@@ -43,10 +43,11 @@ Archlinux i3 dotfiles
 ## Screenshots
 
 Borderless fullscreen video in Firefox (!, not via youtubedl)
+
 ![Borderless fullscreen video in Firefox](https://raw.githubusercontent.com/SoptikHa2/archlinux-dotfiles/master/screenshots/firefox-video-fullscreen-in-window.png)
 
-Neofetch and firefox:
+Neofetch and firefox (the tree style tabs window shrinks when I don't have mouse over it):
 ![Screenshot Archlinux Rice i3 - Neofetch](https://raw.githubusercontent.com/SoptikHa2/archlinux-dotfiles/master/screenshots/firefox-neofetch.png)
----
+
 Locked with i3lock and custom image:
 ![Screenshot Archlinux Rice i3 - locked](https://raw.githubusercontent.com/SoptikHa2/archlinux-dotfiles/master/lockscreen.png)
