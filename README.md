@@ -22,6 +22,7 @@ Archlinux i3 dotfiles
 |`<S-PrtSc>`|Take a screenshot and save it into clipboard|
 |`<C-PrtSc>`|Take a screenshot of current window and save it into `~/data/Pictures`|
 |`<S-C-PrtSc>`|Take a screenshot of current window and save it into clipboard|
+|`<C-Space>`|Dismiss notification|
 
 ## Useful aliases
 |Alias|Real command|
