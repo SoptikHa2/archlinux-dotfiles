@@ -5,6 +5,8 @@ Archlinux i3 dotfiles
 
 |Key combo|Effect|
 |---|---|
+|`<Esc>`|Acts as capslock|
+|`<CapsLock>`|Acts as escape|
 |`<A-d>`|Opens rofi - start/switch programs|
 |`<A-Q>`|Kills currently focused program|
 |`<A-w>`|Opens wireless menu in rofi: switch wifi/ethernet, connect to VPN|
