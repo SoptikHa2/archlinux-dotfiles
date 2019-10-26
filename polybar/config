@@ -19,7 +19,7 @@ foreground = ${colors.foreground}
 ; MODULES
 modules-left = i3_workspaces
 modules-center = window_name
-modules-right = wifi muted battery keyboard datetime
+modules-right = muted battery keyboard datetime
 
 font-0 = fixed:pixelsize=12;1
 font-1 = FontAwesome:style=Regular:size=12

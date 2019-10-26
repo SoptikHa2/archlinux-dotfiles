@@ -60,6 +60,34 @@ snippet beg "begin{} / end{}" bA
 \end{$1}
 endsnippet
 
+snippet 2col "two column layout" b
+\begin{columns}
+	\begin{column}{0.5\textwidth}
+		$1
+	\end{column}
+	\begin{column}{0.5\textwidth}
+		$2
+	\end{column}
+\end{columns}
+endsnippet
+
+snippet itemize "begin itemize list" b
+\begin{itemize}
+	\item $1
+	\item $2
+	\item $3
+	\item $4
+\end{itemize}
+endsnippet
+
+snippet item "prefix item with \" b
+\item $1
+endsnippet
+
+#snippet Q "upon entering capital Q on empty line, and following line contains \end{itemize}, insert \item " "len(snip.buffer) > snip.line+1 and re.match('^[ \t]+', snip.buffer[snip.line]) and re.match('^[ \t]+\\\\end{itemize}', snip.buffer[snip.line+1])" be
+#\item $1
+#endsnippet
+
 #┌────────┐
 #│ BEAMER │
 #└────────┘
