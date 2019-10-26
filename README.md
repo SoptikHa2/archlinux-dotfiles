@@ -5,6 +5,8 @@ Archlinux i3 dotfiles
 
 |Key combo|Effect|
 |---|---|
+|`<Esc>`|Acts as capslock|
+|`<CapsLock>`|Acts as escape|
 |`<A-d>`|Opens rofi - start/switch programs|
 |`<A-Q>`|Kills currently focused program|
 |`<A-w>`|Opens wireless menu in rofi: switch wifi/ethernet, connect to VPN|
@@ -22,6 +24,7 @@ Archlinux i3 dotfiles
 |`<S-PrtSc>`|Take a screenshot and save it into clipboard|
 |`<C-PrtSc>`|Take a screenshot of current window and save it into `~/data/Pictures`|
 |`<S-C-PrtSc>`|Take a screenshot of current window and save it into clipboard|
+|`<C-Space>`|Dismiss notification|
 
 ## Useful aliases
 |Alias|Real command|
@@ -43,10 +46,11 @@ Archlinux i3 dotfiles
 ## Screenshots
 
 Borderless fullscreen video in Firefox (!, not via youtubedl)
+
 ![Borderless fullscreen video in Firefox](https://raw.githubusercontent.com/SoptikHa2/archlinux-dotfiles/master/screenshots/firefox-video-fullscreen-in-window.png)
 
-Neofetch and firefox:
+Neofetch and firefox (the tree style tabs window shrinks when I don't have mouse over it):
 ![Screenshot Archlinux Rice i3 - Neofetch](https://raw.githubusercontent.com/SoptikHa2/archlinux-dotfiles/master/screenshots/firefox-neofetch.png)
----
+
 Locked with i3lock and custom image:
 ![Screenshot Archlinux Rice i3 - locked](https://raw.githubusercontent.com/SoptikHa2/archlinux-dotfiles/master/lockscreen.png)
