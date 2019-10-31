@@ -24,5 +24,11 @@ alias wifi="please wifi-menu"
 alias today="date +'%Y-%m-%d'"
 alias now="date +'%Y-%m-%d %H-%M-%S'"
 
-# Remote Desktop alias
+# Make xclip default selection clipboard
+alias xclip="xclip -selection clipboard"
+
+# Make bc load math libraries (-l) and start in quiet mode (-q)
+alias bc="bc -lq"
+
+# Remote Desktop alias to work
 alias remote="xfreerdp -u $rdesktop_username -d '$rdesktop_domain' /dynamic-resolution -f $rdesktop_pcname"

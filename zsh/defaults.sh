@@ -9,9 +9,6 @@ export PATH=~/.local/bin:$PATH
 # Add ruby path
 export PATH=/home/petr/.gem/ruby/2.6.0/bin:$PATH
 
-# Make xclip default selection clipboard
-alias xclip="xclip -selection clipboard"
-
 # Make neovim the default editor (except for ssh, in that case use vim)
 if [[ -n $SSH_CONNECTION ]]; then
 	export EDITOR='vim'
