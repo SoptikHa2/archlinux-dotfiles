@@ -192,6 +192,8 @@ bindsym $mod+Tab exec /usr/bin/change-keyboard
 bindcode 121 exec pavolume.sh --togmute
 bindcode 122 exec pavolume.sh --down
 bindcode 123 exec pavolume.sh --up
+# Play/pause firefox
+bindcode 172 exec play-pause-firefox.sh
 # Lock computer
 #bindcode 133 exec lock-custom
 bindsym $mod+Ctrl+l exec lock-custom
