@@ -49,11 +49,17 @@ label-focused-foreground = $(colors.foreground)
 label-unfocused-foreground = ${colors.not_important}
 label-urgend-foreground = ${colors.alert}
 
+; Label current workspace on first monitor
 label-focused-underline = ${colors.primary}
 label-focused-background = ${colors.background_alt}
 label-focused-padding-left = 1
 label-focused-padding = 2
 
+; Label workspace on other monitors
+label-visible-underline = ${colors.primary}
+label-visible-background = ${colors.background_alt}
+label-visible-padding-left = 1
+label-visible-padding = 2
 
 ; Check if device is connected to wifi and internet
 [module/wifi]
