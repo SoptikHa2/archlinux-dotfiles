@@ -43,6 +43,24 @@ Archlinux i3 dotfiles
 |---|---|
 | FF config: `full-screen-api.ignore-widgets = true` | Fullscreen videos are not really fullscreen, but are borderless intead. See first screenshot, but it's quite nice feature. |
 
+## Vim workflow
+### Html snippets
+After creating new html file, one can type `html<tab>` in order to have basic html structure - head, body, links to css/js/favicon, meta tags - setup.
+After typing `<`, one can press tab so the closing tag will autocomplete.
+
+### LaTeX snippets
+After creating new tex file, one can type `article<tab>` which fills in latex preamble with basic declarations.
+
+`begin` autofills begin block.
+
+`fm` and `dm` (without tab) creates math blocks.
+
+`{number}/<tab>` or `//` creates a `\frac` block.
+
+Typing `name-of-figure<C-k>` launches inkscape which let's user draw the figure, which is automagically compiled into latex document. [`inkscape-figures watch`](https://github.com/gillescastel/inkscape-figures) has to be launched beforehand.
+
+Existing figures can be edited by pressing `<C-k>` in normal mode and selecting one via rofi.
+
 ## Screenshots
 
 Borderless fullscreen video in Firefox (!, not via youtubedl)
