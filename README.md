@@ -57,9 +57,9 @@ After creating new tex file, one can type `article<tab>` which fills in latex pr
 
 `{number}/<tab>` or `//` creates a `\frac` block.
 
-Typing `name-of-figure<C-k>` launches inkscape which let's user draw the figure, which is automagically compiled into latex document. [`inkscape-figures watch`](https://github.com/gillescastel/inkscape-figures) has to be launched beforehand.
+Typing `name-of-figure<C-f>` launches inkscape which let's user draw the figure, which is automagically compiled into latex document. [`inkscape-figures watch`](https://github.com/gillescastel/inkscape-figures) has to be launched beforehand.
 
-Existing figures can be edited by pressing `<C-k>` in normal mode and selecting one via rofi.
+Existing figures can be edited by pressing `<C-f>` in normal mode and selecting one via rofi.
 
 ## Screenshots
 
