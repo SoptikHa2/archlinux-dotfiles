@@ -49,6 +49,8 @@ After creating new html file, one can type `html<tab>` in order to have basic ht
 After typing `<`, one can press tab so the closing tag will autocomplete.
 
 ### LaTeX snippets
+Pressing `\ll` turns autocompilation on/off. After file is saved, changes will be automatically compiled and pdf viewer (`mupdf`) will be updated.
+
 After creating new tex file, one can type `article<tab>` which fills in latex preamble with basic declarations.
 
 `begin` autofills begin block.
