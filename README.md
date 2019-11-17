@@ -43,6 +43,20 @@ Archlinux i3 dotfiles
 |---|---|
 | FF config: `full-screen-api.ignore-widgets = true` | Fullscreen videos are not really fullscreen, but are borderless intead. See first screenshot, but it's quite nice feature. |
 
+## Useful cli tools
+
+- [awk](https://tildes.net/~comp/f1a/awk_by_example) - linked awesome tutorial, I wrote md->html converter in it.
+
+- [fselect](https://github.com/jhspetersson/fselect) - find files (and do magic with them) with sql-like queries
+
+- [dust](https://github.com/bootandy/dust) - du replacement, shows where did all your disk space go
+
+- [fd](https://github.com/sharkdp/fd) - find replacement that is user friendly
+
+- [pazi](https://github.com/euank/pazi) - quick movement across most-visited directories ([z](https://github.com/rupa/z) replacement)
+
+- [bb](https://github.com/epilys/bb) (BigBrother) - htop alternative
+
 ## Vim workflow
 ### Html snippets
 After creating new html file, one can type `html<tab>` in order to have basic html structure - head, body, links to css/js/favicon, meta tags - setup.
