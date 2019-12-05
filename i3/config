@@ -77,7 +77,7 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-#bindsym $mod+w layout tabbed
+bindsym $mod+q layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -193,7 +193,11 @@ bindcode 121 exec pavolume.sh --togmute
 bindcode 122 exec pavolume.sh --down
 bindcode 123 exec pavolume.sh --up
 # Play/pause firefox
-bindcode 172 exec play-pause-firefox.sh
+#bindcode 172 exec play-pause-firefox.sh
+# Play/pause next/prev - any player (spotify)
+bindcode 172 exec playerctl play-pause
+bindcode 171 exec playerctl next
+bindcode 173 exec playerctl previous
 # Lock computer
 #bindcode 133 exec lock-custom
 bindsym $mod+Ctrl+l exec lock-custom

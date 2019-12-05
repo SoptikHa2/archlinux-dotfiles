@@ -25,6 +25,21 @@ snippet cheatsheet "math cheatsheet template" b
 \author{Petr Šťastný}
 \date{`date +%F`}
 
+\usepackage[a4paper]{geometry}
+\usepackage[pdf]{graphviz}
+\usepackage{circuitikz}
+\usepackage{multicol}
+% Inkscape figures - https://castel.dev/post/lecture-notes-2/
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
+
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+
 \begin{document}
 
 \maketitle
