@@ -5,6 +5,9 @@ set number relativenumber
 "colorscheme peachpuff
 " Remember last scroll position
 autocmd BufReadPost * if @% !~# '\.git[\/\\]COMMIT_EDITMSG$' && line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif 
+" Launch interactive shell with :!
+" This is slightly slower, but allows me to use all the magic in my .rc
+"set shellcmdflag=-ic
 
 "┌────────────────┐
 "│ KEYBOARD REMAP │
@@ -24,6 +27,11 @@ nmap <F5> :make<CR>
 imap <F5> <Esc>:w<CR>:make<CR>
 " Make :make actually :make run in rust files
 autocmd FileType rust cmap make make<Space>run
+
+" <C-f> inkscape figures
+" https://github.com/gillescastel/inkscape-figures
+inoremap <C-f> <Esc>: silent exec '.!inkscape-figures create "'.getline('.').'" "'.b:vimtex.root.'/figures/"'<CR><CR>:w<CR>
+nnoremap <C-f> : silent exec '!inkscape-figures edit "'.b:vimtex.root.'/figures/" > /dev/null 2>&1 &'<CR><CR>:redraw!<CR>
 
 " F12 => Jump to definition
 nmap <F12> :ALEGoToDefinition<CR>
@@ -125,9 +133,9 @@ let g:lightline.active = { 'right': [[ 'linter_checking', 'linter_errors', 'lint
 
 " Deoplete
 let g:deoplete#enable_at_startup = 1
-" '_': ['ale', 'tabnine'],
+"ale, tabnine
 call deoplete#custom#option('sources', {
-\ '_': ['ale'],
+\ '_': ['ale', 'tabnine'],
 \})
 
 " Close preview window after autocompletion is done
