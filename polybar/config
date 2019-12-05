@@ -2,10 +2,10 @@
 [colors]
 background = #90303030
 background_alt = #90505050
-foreground = #dfdfdf
+foreground = #FFFFFF
 primary = #f21032
 alert = #f2a310
-not_important = #999
+not_important = #c1c1c1
 
 [bar/top]
 width = 100%
