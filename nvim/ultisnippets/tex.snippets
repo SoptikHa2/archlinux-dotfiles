@@ -2,6 +2,21 @@ snippet article "documentclass article" b
 \documentclass{article}
 
 \usepackage[a4paper]{geometry}
+\usepackage[pdf]{graphviz}
+\usepackage{circuitikz}
+\usepackage{multicol}
+\usepackage{hyperref}
+% Inkscape figures - https://castel.dev/post/lecture-notes-2/
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
+
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+
 
 \title{$1}
 \author{Petr Šťastný}
