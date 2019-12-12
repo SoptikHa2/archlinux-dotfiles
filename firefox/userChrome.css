@@ -31,11 +31,19 @@
 
 /* Hide sidebar header if not hovered, and make it smaller */
 #sidebar-box #sidebar-header {
-  display: none;
+  padding: 0px;
+	margin: 0px;
+  background-color: darkgray !important;
+	height: 0px !important;
+	min-height: 10px !important;;
+}
+#sidebar-box #sidebar-header * {
+	display: none;
 }
 
-#sidebar-box:hover #sidebar-header {
+#sidebar-box #sidebar-header:hover * {
   display: inherit !important;
-  background-color: darkgray !important;
-  padding: 0px;
+	height: auto;
+	padding: inherit;
+	margin: inherit;
 }
