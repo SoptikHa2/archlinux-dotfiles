@@ -28,3 +28,14 @@
 #TabsToolbar {
 	visibility: collapse;
 }
+
+/* Hide sidebar header if not hovered, and make it smaller */
+#sidebar-box #sidebar-header {
+  display: none;
+}
+
+#sidebar-box:hover #sidebar-header {
+  display: inherit !important;
+  background-color: darkgray !important;
+  padding: 0px;
+}
