@@ -79,6 +79,8 @@ Existing figures can be edited by pressing `<C-f>` in normal mode and selecting 
 
 ## Screenshots
 
+![JUST MONICA](https://raw.githubusercontent.com/SoptikHa2/archlinux-dotfiles/master/forever-and-ever.png)
+
 Borderless fullscreen video in Firefox (!, not via youtubedl)
 
 ![Borderless fullscreen video in Firefox](https://raw.githubusercontent.com/SoptikHa2/archlinux-dotfiles/master/screenshots/firefox-video-fullscreen-in-window.png)
