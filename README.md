@@ -88,3 +88,20 @@ Neofetch and firefox (the tree style tabs window shrinks when I don't have mouse
 
 Locked with i3lock and custom image:
 ![Screenshot Archlinux Rice i3 - locked](https://raw.githubusercontent.com/SoptikHa2/archlinux-dotfiles/master/lockscreen.png)
+
+## Firefox about:config
+
+|Configuration|Value|Explanation|
+|---|---|---|
+|devtools.debugger.remote-enabled|true|Useful for userchrome.css live changing|
+|devtools.theme|dark||
+|media.navigator.enabled|false||
+|media.peerconnection.enabled|false||
+|network.trr.mode|2|[see this](https://daniel.haxx.se/blog/2018/06/03/inside-firefoxs-doh-engine/)|
+|privacy.resistFingerprinting|true||
+|privacy.spoof\_english|2||
+|privacy.trackingprotection.enabled|true||
+|privacy.userContext.enabled|true||
+|layers.acceleration.force-enabled|true|OpenGL OMTC (see Firefox/Tweaks AW)|
+|gfx.webrender.all|true|Enable Servo WebRender instead of Gecko. Unstable!|
+

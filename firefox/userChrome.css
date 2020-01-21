@@ -29,21 +29,8 @@
 	visibility: collapse;
 }
 
-/* Hide sidebar header if not hovered, and make it smaller */
+/* Hide sidebar header */
 #sidebar-box #sidebar-header {
-  padding: 0px;
-	margin: 0px;
-  background-color: darkgray !important;
-	height: 0px !important;
-	min-height: 10px !important;;
-}
-#sidebar-box #sidebar-header * {
-	display: none;
+	visibility: collapse;
 }
 
-#sidebar-box #sidebar-header:hover * {
-  display: inherit !important;
-	height: auto;
-	padding: inherit;
-	margin: inherit;
-}

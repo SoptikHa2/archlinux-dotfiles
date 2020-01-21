@@ -179,7 +179,7 @@ gaps outer -10
 # Start compton (with xrender backend)
 exec --no-startup-id compton --daemon --backend xrender
 # Set background
-exec --no-startup-id feh --bg-fill ~/data/Pictures/wallpaper.jpg
+exec --no-startup-id feh --bg-fill ~/archlinux-dotfiles/wallpaper.png
 # Start polybar
 exec --no-startup-id ~/.config/polybar/launch.sh
 # Set dmenu alternative (rofi)
