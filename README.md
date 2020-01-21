@@ -106,4 +106,13 @@ Locked with i3lock and custom image:
 |privacy.userContext.enabled|true||
 |layers.acceleration.force-enabled|true|OpenGL OMTC (see Firefox/Tweaks AW)|
 |gfx.webrender.all|true|Enable Servo WebRender instead of Gecko. Unstable!|
+|browser.sessionstore.resume\_from\_crash|false|Don't restore after caching. Disabling this saves write (opened urls, cookies, history, form data) to disk every 15 seconds.|
 
+### Enable RAM cache
+Instead of saving cache to disk, save it to RAM instead. It's faster and it doesn't hurt my SSD so much. See [AW](https://wiki.archlinux.org/index.php/Firefox/Tweaks#Turn_off_the_disk_cache).
+
+|Configuration|Value|Explanation|
+|---|---|---|
+|browser.cache.disk.enable|false||
+|browser.cache.memory.enable|true||
+|browser.cache.memory.capacity|-1|Maximum memory, in KB, used. Use `-1` for auto detection.|
