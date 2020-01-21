@@ -104,6 +104,8 @@ Locked with i3lock and custom image:
 |privacy.spoof\_english|2||
 |privacy.trackingprotection.enabled|true||
 |privacy.userContext.enabled|true||
+|devtools.chrome.enabled|true|Enable userChrome.css and userContent.css|
+|toolkit.legacyUserProfileCustomizations.stylesheets|true|Enable userChrome.css and userContent.css|
 |full-screen-api.warning.timeout|0|Disable fullscreen warning|
 |layers.acceleration.force-enabled|true|OpenGL OMTC (see Firefox/Tweaks AW)|
 |gfx.webrender.all|true|Enable Servo WebRender instead of Gecko. Unstable!|
