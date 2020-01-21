@@ -95,7 +95,7 @@ Locked with i3lock and custom image:
 
 |Configuration|Value|Explanation|
 |---|---|---|
-|devtools.debugger.remote-enabled|true|Useful for userchrome.css live changing|
+|devtools.debugger.remote-enabled|true|Useful for userchrome.css live changing (`<C-A-S-i>`)|
 |devtools.theme|dark||
 |media.navigator.enabled|false||
 |media.peerconnection.enabled|false||
