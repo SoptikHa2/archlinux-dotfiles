@@ -1,0 +1,10 @@
+/* User content is used to style individual pages, such as about:blank or about:home */
+@-moz-document url(about:blank), url(about:home), url(about:newtab), url() {
+    body {
+        background-color: #2a2a2e !important;
+    }
+    input {
+        color: #CCC !important;
+        background-color: #3a3a3e !important;
+    }
+}
