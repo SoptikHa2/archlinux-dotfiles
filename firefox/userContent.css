@@ -1,5 +1,5 @@
 /* User content is used to style individual pages, such as about:blank or about:home */
-@-moz-document url(about:blank), url(about:home), url(about:newtab), url() {
+@-moz-document url(about:home), url(about:newtab) {
     body {
         background-color: #2a2a2e !important;
     }
