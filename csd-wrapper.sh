@@ -1,1 +1,0 @@
-/home/petr/.cisco/csd-wrapper.sh
