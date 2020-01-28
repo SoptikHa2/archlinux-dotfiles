@@ -21,5 +21,5 @@ case $chosen in
 		sudo dhcpcd enp0s20f0u1u4
 		;;
 	$option_vpn)
-		terminator -x "source /home/petr/.zshrc && sudo openconnect $vpn_address -c $vpn_cert -k $vpn_key"
+		terminator -x "source /home/petr/.zshrc && sudo openconnect $vpn_address -c $vpn_cert -k $vpn_key --csd-wrapper ~/.cisco/csd-wrapper.sh"
 esac
