@@ -3,7 +3,7 @@
 # Source: https://gist.github.com/l0ki000/56845c00fd2a0e76d688
 
 # This file defines $vpn_address variable
-source ~/archlinux-dotfiles/bin/secret
+source /home/petr/archlinux-dotfiles/bin/secret
 
 # Enter your vpn host here
 CSD_HOSTNAME="$vpn_address"
