@@ -10,12 +10,13 @@
 max_brightness=$(cat /sys/class/backlight/intel_backlight/max_brightness)
 current_brightness=$(cat /sys/class/backlight/intel_backlight/brightness)
 new_brightness=0
+brightness_step=50
 
 if [ "$1" -eq 0 ]; then
-	new_brightness=$((current_brightness - 100))
+	new_brightness=$((current_brightness - brightness_step))
 fi
 if [ "$1" -eq 1 ]; then
-	new_brightness=$((current_brightness + 100))
+	new_brightness=$((current_brightness + brightness_step))
 fi
 
 if [ "$new_brightness" -lt 5 ]; then

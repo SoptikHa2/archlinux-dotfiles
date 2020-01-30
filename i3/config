@@ -182,6 +182,13 @@ exec --no-startup-id compton --daemon --backend xrender
 exec --no-startup-id feh --bg-fill ~/archlinux-dotfiles/wallpaper.png
 # Start polybar
 exec --no-startup-id ~/.config/polybar/launch.sh
+# Setup keyboard
+# # Remap capslock and escape
+exec --no-startup-id setxkbmap -option caps:swapescape
+# # Add compose key
+# # (so meta-~-n produces ñ or meta-^-8 produces ⁸)
+exec --no-startup-id setxkbmap -option compose:lwin
+
 # Set dmenu alternative (rofi)
 # Start rofi in combined mode, which allows user to either run new
 # app or switch to already running one
