@@ -1,4 +1,14 @@
 #!/bin/bash
-# Use i3lock with custom image
+# First parameter: Directory
+set -e
 
-i3lock -i "/home/petr/archlinux-dotfiles/lockscreen.png" -ue
+if [ ! -d "$1" ]; then
+	echo "Please provide a directory to encrypt"
+	exit 1
+fi
+
+tar -cvzf Journal.tar.gz Journal/
+gpg -r petr.stastny01@gmail.com --encrypt Journal.tar.gz
+shred -u -n1 Journal.tar.gz
+find Journal -type f -exec shred {} \;
+rm -rf Journal
