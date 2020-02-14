@@ -7,8 +7,8 @@ if [ ! -d "$1" ]; then
 	exit 1
 fi
 
-tar -cvzf Journal.tar.gz Journal/
-gpg -r petr.stastny01@gmail.com --encrypt Journal.tar.gz
-shred -u -n1 Journal.tar.gz
-find Journal -type f -exec shred {} \;
-rm -rf Journal
+tar -cvzf "$1".tar.gz "$1"
+gpg -r petr.stastny01@gmail.com --encrypt "$1".tar.gz
+shred -u -n1 "$1".tar.gz
+find "$1" -type f -exec shred {} \;
+rm -rf "$1"
