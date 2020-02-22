@@ -30,3 +30,6 @@ fi
 
 xrandr --output "$target_screen" --rotation "$1"
 xinput set-prop "$target_touchpad" --type=float "Coordinate Transformation Matrix" $transformation_matrix
+
+# Relaunch polybar so it adapts to new screen dimensions
+~/archlinux-dotfiles/polybar/launch.sh
