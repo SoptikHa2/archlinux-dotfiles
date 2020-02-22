@@ -209,6 +209,14 @@ bindcode 123 exec pavolume.sh --up
 bindcode 172 exec playerctl play-pause
 bindcode 171 exec playerctl next
 bindcode 173 exec playerctl previous
+# Use mod+(arrow key) to rotate laptop screen orientation
+# Only numpad arrow keys work
+# The variable $TARGET_DISPLAY is set in ~/archlinux-dotfiles/zsh/defaults.sh
+# Up, Down, Left, Right:
+bindcode $mod+80 exec "rotate-screen normal"
+bindcode $mod+88 exec "rotate-screen inverted"
+bindcode $mod+83 exec "rotate-screen left"
+bindcode $mod+85 exec "rotate-screen right"
 # Lock computer
 #bindcode 133 exec lock-custom
 bindsym $mod+Ctrl+l exec lock-custom
