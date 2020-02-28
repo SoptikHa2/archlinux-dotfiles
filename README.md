@@ -121,3 +121,13 @@ Instead of saving cache to disk, save it to RAM instead. It's faster and it does
 |browser.cache.disk.enable|false||
 |browser.cache.memory.enable|true||
 |browser.cache.memory.capacity|-1|Maximum memory, in KB, used. Use `-1` for auto detection.|
+
+### Using raspberry pi as remote display & game console
+I want to be able to connect to raspberry pi that is connected via HDMI to TV, and send whatever I see on my screen to TV this way, over LAN. Like dual displays, but one of them is reachable over LAN.
+
+```sh
+# Setup reverse SSH, as I can't connect raspberry->laptop
+ssh -R 19999:localhost:22 pi@sayaka
+# (on raspberry)
+ssh petr@localhost -p 19999
+```
