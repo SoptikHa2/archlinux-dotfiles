@@ -4,7 +4,7 @@ background = #90303030
 background_alt = #90505050
 foreground = #FFFFFF
 primary = #f21032
-alert = #f2a310
+alert = #f00
 not_important = #c1c1c1
 
 [bar/top]
@@ -47,7 +47,9 @@ label-separator = "   "
 
 label-focused-foreground = $(colors.foreground)
 label-unfocused-foreground = ${colors.not_important}
-label-urgend-foreground = ${colors.alert}
+
+; Workspace with notification
+label-urgent-foreground = ${colors.alert}
 
 ; Label current workspace on first monitor
 label-focused-underline = ${colors.primary}
