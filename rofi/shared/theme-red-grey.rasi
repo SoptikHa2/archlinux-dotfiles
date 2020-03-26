@@ -30,4 +30,5 @@
     active-background:           rgba ( 29, 31, 33, 17 % );
     selected-active-background:  @selected-normal-background;
     font-big:                        "Noto 80px";
+    font-medium:		 "Noto 42px";
 }
