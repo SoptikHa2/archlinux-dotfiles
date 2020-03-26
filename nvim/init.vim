@@ -8,6 +8,8 @@ autocmd BufReadPost * if @% !~# '\.git[\/\\]COMMIT_EDITMSG$' && line("'\"") > 1 
 " Launch interactive shell with :!
 " This is slightly slower, but allows me to use all the magic in my .rc
 "set shellcmdflag=-ic
+" When scrolling, I want to always see few lines above and below cursor
+set scrolloff=5
 
 "┌────────────────┐
 "│ KEYBOARD REMAP │
@@ -17,10 +19,6 @@ inoremap kj <Esc>
 cnoremap kj <C-C> 
 " Lets save without leaving insert mode
 inoremap <C-S> <Esc>:w<CR>a
-" And save after going to another line in insert mode
-"inoremap <CR> <Esc>:w<CR>a<CR>
-"inoremap <Up> <Esc>:w<CR>a<Up>
-"inoremap <Down> <Esc>:w<CR>a<Down>
 
 " Run :make after pressing the refresh button (or F5 on my keyboard)
 nmap <F5> :make<CR>
@@ -37,14 +35,11 @@ nnoremap <C-f> : silent exec '!inkscape-figures edit "'.b:vimtex.root.'/figures/
 nmap <F12> :ALEGoToDefinition<CR>
 imap <F12> <Esc>:ALEGoToDefinition<CR>
 
-" F7 => previous file
-" F8 => next file
-" (open new file with :tabe <filename>)
-" TODO: Doesn't work
-imap <Char-220> <Esc>:tabp<CR>
-imap <Char-133> <Esc>:tabn<CR>
-nmap <Char-220> :tabp<CR>
-nmap <Char-133> :tabn<CR>
+" Switch between buffers
+" (open new file with :e <filename>)
+nnoremap <Tab> :bnext!<CR>
+nnoremap <S-Tab> :bprevious!<CR>
+nnoremap <C-X> :bp<bar>sp<bar>bn<bar>bd<CR>
 
 "┌─────────┐
 "│ PLUGINS │
@@ -82,6 +77,15 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Racer (autocompletion)
 Plug 'racer-rust/vim-racer'
+
+" Resotre view (save folds inbetween vim sessions)
+Plug 'vim-scripts/restore_view.vim'
+
+" File browser
+Plug 'preservim/nerdtree'
+
+" Jump to definitions/etc (IDE)
+Plug 'pechorin/any-jump.vim'
 
 call plug#end()
 
@@ -143,6 +147,9 @@ autocmd CompleteDone * silent! pclose!
 " Remap Ctrl+Space to Ctrl+N (autocomplete select/next)
 inoremap <C-Space> <C-N>
 
+" Recommended folding settings (restore_view.vim)
+set viewoptions=cursor,folds,slash,unix
+
 " Make ALE work properly with rust
 let g:ale_linters = {'rust': ['rls']}
 let g:ale_fixers = { 'rust': ['rustfmt']}
@@ -152,3 +159,12 @@ let g:ale_lint_on_text_changed = 1
 " And change colors
 highlight ALEWarning ctermbg=DarkYellow
 highlight ALEError ctermbg=DarkRed
+
+" NerdTree
+" Open automatically when opening a directory,
+" don't hide when selecting a file
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+" Toggle with \n
+nnoremap <leader>n :NERDTreeToggle<CR>
+
