@@ -80,7 +80,7 @@ Existing figures can be edited by pressing `<C-f>` in normal mode and selecting 
 ### Nonstandard or uncommon keybindings
 - Visual select lines and press `zf` to create foldable section. Use `za` to toggle it and `zd` to delete it.
 - When a folder is opened, file browser NerdTree is opened, which doesn't close when one opens files. This way it works like Solution Browser in VS. This can be toggled with `\n`.
-- When hovering over a symbol, `<C-]` sometimes - when CTAGs are generated - navigates user to definition. The same can be achieved with `\j` without the need for ctags.
+- When hovering over a symbol, `<C-]>` sometimes - when CTAGs are generated - navigates user to definition. The same can be achieved with `\j` without the need for ctags.
 - `<Tab>` and `<S-Tab>` switches between multiple open buffers. `<C-X>` closes current buffer.
 - `<F5>` compiles and runs current code. Only works in Rust so far.
 
