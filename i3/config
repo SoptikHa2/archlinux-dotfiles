@@ -262,6 +262,11 @@ mode $gamingMode {
 	bindsym Shift+Print exec maim | xclip -selection clipboard -t image/png
 	bindsym Ctrl+Print exec maim -i $(xdotool getactivewindow) ~/data/Pictures/Screenshot-$(date +%Y-%m-%d-%H-%M-%S).png
 	bindsym Shift+Ctrl+Print exec maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+
+	# Play/pause next/prev - any player (spotify)
+	bindcode 172 exec playerctl play-pause
+	bindcode 171 exec playerctl next
+	bindcode 173 exec playerctl previous
 }
 
 # Define multimonitor setup
