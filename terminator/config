@@ -15,6 +15,7 @@
 [plugins]
 [profiles]
   [[default]]
+    background_darkness = 0.0
     cursor_color = "#aaaaaa"
     font = Monospace 12
     foreground_color = "#ffffff"
