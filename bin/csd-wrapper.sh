@@ -13,7 +13,7 @@ then
     exit 1
 fi
 
-HOSTSCAN_DIR="$HOME/.cisco/hostscan"
+HOSTSCAN_DIR="/home/petr/.cisco/hostscan"
 LIB_DIR="$HOSTSCAN_DIR/lib"
 BIN_DIR="$HOSTSCAN_DIR/bin"
 
@@ -79,7 +79,7 @@ then
     FILES=( $(cat $HOSTSCAN_DIR/manifest | sed -r 's/\(|\)//g' | awk '{ print $2; }') )
     WORK_DIR=`pwd`
     TMP_DIR=`mktemp -d` && cd $TMP_DIR
-    for i in ${FILES[@]} ; do
+    for i in "${FILES[@]}" ; do
         FILE="$(basename "$i")"
            
         echo "Downloading: $FILE to $TMP_DIR"
@@ -111,7 +111,7 @@ then
         
     done
     
-    for i in ${BINS[@]} ; do
+    for i in "${BINS[@]}" ; do
         echo "Setting excecution bit on: $BIN_DIR/$i"
         chmod u+x $BIN_DIR/$i
     done
