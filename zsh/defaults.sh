@@ -7,7 +7,7 @@
 source ~/.cargo/env
 export PATH=~/.local/bin:$PATH
 # Add ruby path
-export PATH=/home/petr/.gem/ruby/2.6.0/bin:$PATH
+export PATH=/home/petr/.gem/ruby/2.7.0/bin:$PATH
 
 # Make neovim the default editor (except for ssh, in that case use vim)
 if [[ -n $SSH_CONNECTION ]]; then
