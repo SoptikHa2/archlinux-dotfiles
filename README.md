@@ -45,7 +45,7 @@ Archlinux i3 dotfiles
 
 ## Useful cli tools
 
-- [awk](https://tildes.net/~comp/f1a/awk_by_example) - linked awesome tutorial, I wrote md->html converter in it.
+- [awk](https://tildes.net/~comp/f1a/awk_by_example) - linked awesome tutorial, I wrote md-\>html converter in it.
 
 - [fselect](https://github.com/jhspetersson/fselect) - find files (and do magic with them) with sql-like queries
 
@@ -76,6 +76,13 @@ After creating new tex file, one can type `article<tab>` which fills in latex pr
 Typing `name-of-figure<C-f>` launches inkscape which let's user draw the figure, which is automagically compiled into latex document. [`inkscape-figures watch`](https://github.com/gillescastel/inkscape-figures) has to be launched beforehand.
 
 Existing figures can be edited by pressing `<C-f>` in normal mode and selecting one via rofi.
+
+### Nonstandart or uncommon keybindings
+- Visual select lines and press `zf` to create foldable section. Use `za` to toggle it and `zd` to delete it.
+- When a folder is opened, file browser NerdTree is opened, which doesn't close when one opens files. This way it works like Solution Browser in VS. This can be toggled with `\n`.
+- When hovering over a symbol, `<C-]` sometimes - when CTAGs are generated - navigates user to definition. The same can be achieved with `\j` without the need for ctags.
+- `<Tab>` and `<S-Tab>` switches between multiple open buffers. `<C-X>` closes current buffer.
+- `<F5>` compiles and runs current code. Only works in Rust so far.
 
 ## Screenshots
 
@@ -122,12 +129,4 @@ Instead of saving cache to disk, save it to RAM instead. It's faster and it does
 |browser.cache.memory.enable|true||
 |browser.cache.memory.capacity|-1|Maximum memory, in KB, used. Use `-1` for auto detection.|
 
-### Using raspberry pi as remote display & game console
-I want to be able to connect to raspberry pi that is connected via HDMI to TV, and send whatever I see on my screen to TV this way, over LAN. Like dual displays, but one of them is reachable over LAN.
 
-```sh
-# Setup reverse SSH, as I can't connect raspberry->laptop
-ssh -R 19999:localhost:22 pi@sayaka
-# (on raspberry)
-ssh petr@localhost -p 19999
-```
