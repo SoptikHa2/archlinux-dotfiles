@@ -28,6 +28,7 @@ tar\
 	--exclude='/mnt/data/petr/Torrent'\
 	--exclude='/mnt/data/petr/data-collection'\
 	--exclude='/mnt/data/petr/tmp'\
+	--exclude="/mnt/data/petr/*.gpg"\
 	~/archlinux-dotfiles\
 	~/*.txt\
 	~/*.pdf\
