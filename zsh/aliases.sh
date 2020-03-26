@@ -42,3 +42,5 @@ alias remote="xfreerdp -u $rdesktop_username -d '$rdesktop_domain' /dynamic-reso
 # System-inhibit that prevents laptop from going to sleep with closed lid. Useful when switching to bigger monitor.
 # This is a blocking call, and stopping it <C-c> will stop the effect.
 alias inhibit-sleep="systemd-inhibit --what=handle-lid-switch sleep 6h"
+
+alias dd="echo 'NO YOU IDIOT. Shutting down.'; sleep 2; poweroff"
