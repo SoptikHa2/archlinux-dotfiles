@@ -6,6 +6,7 @@ snippet article "documentclass article" b
 \usepackage{circuitikz}
 \usepackage{multicol}
 \usepackage{hyperref}
+\usepackage{amsmath}
 % Inkscape figures - https://castel.dev/post/lecture-notes-2/
 \usepackage{import}
 \usepackage{xifthen}
@@ -34,16 +35,15 @@ endsnippet
 snippet cheatsheet "math cheatsheet template" b
 \documentclass[twocolumn]{article}
 
-\usepackage[margin=2cm, top=0cm]{geometry}
-
 \title{$1}
 \author{Petr Šťastný}
 \date{`date +%F`}
 
-\usepackage[a4paper]{geometry}
+\usepackage[margin=2cm, top=0cm]{geometry}
 \usepackage[pdf]{graphviz}
 \usepackage{circuitikz}
 \usepackage{multicol}
+\usepackage{amsmath}
 % Inkscape figures - https://castel.dev/post/lecture-notes-2/
 \usepackage{import}
 \usepackage{xifthen}
@@ -178,6 +178,11 @@ snippet // "Fraction" iA
 endsnippet
 snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)/' "Fraction" wr
 \\frac{`!p snip.rv = match.group(1)`}{$1}$0
+endsnippet
+
+# Binom
+snippet binom "Binom" w
+\binom {$1} {$2} $3
 endsnippet
 
 #┌────────────┐
