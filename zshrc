@@ -1,7 +1,3 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-# Path to your oh-my-zsh installation.
 # Setup oh-my-zsh
 export ZSH="/home/petr/.oh-my-zsh"
 ZSH_THEME="mrtazz"
@@ -23,3 +19,4 @@ source ~/archlinux-dotfiles/zsh/init.sh
 
 # Custom functions
 source ~/archlinux-dotfiles/zsh/functions.sh
+#echo "hacked very much"
