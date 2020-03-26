@@ -49,7 +49,9 @@ label-focused-foreground = $(colors.foreground)
 label-unfocused-foreground = ${colors.not_important}
 
 ; Workspace with notification
-label-urgent-foreground = ${colors.alert}
+label-urgent-background = ${colors.background_alt}
+label-urgent-padding-left = 1
+label-urgent-padding = 2
 
 ; Label current workspace on first monitor
 label-focused-underline = ${colors.primary}
