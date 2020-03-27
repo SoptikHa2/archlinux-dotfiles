@@ -18,7 +18,7 @@ alias gds="git diff --staged"
 alias gaa="git add -u"
 
 # Misc aliases
-alias sudo="sudo -E"
+alias sudo="sudo -E -H" # -E to preserve env variables, -H to not preserve $HOME variable and set it to target user instead
 alias please="sudo"
 alias wifi="please wifi-menu"
 alias today="date +'%Y-%m-%d'"
