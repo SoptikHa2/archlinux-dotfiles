@@ -177,11 +177,13 @@ gaps inner 10
 gaps outer -10
 
 # Start compton (with xrender backend)
-exec --no-startup-id compton --daemon --backend xrender
+# exec --no-startup-id compton --daemon --backend xrender
 # Set background
 exec --no-startup-id feh --bg-fill ~/archlinux-dotfiles/wallpaper.png
 # Start polybar
 exec --no-startup-id ~/.config/polybar/launch.sh
+# Start redshift (blue light filter)
+exec --no-startup-id redshift
 # Setup keyboard
 # # Remap capslock and escape
 exec --no-startup-id setxkbmap -option caps:swapescape
@@ -239,7 +241,7 @@ for_window [title="Picture-in-Picture"] sticky enable
 
 # Gaming mode (disable all the default alt shortcuts except for alt+f (toggle fullscreen) and alt+shift+q (kill process)
 # Allow some essentials keys as well, such as volume, brightness, or screenshots
-set $gamingMode "gaming_mode"
+set $gamingMode "🎮"
 bindsym $mod+g mode $gamingMode
 
 mode $gamingMode {
@@ -281,3 +283,10 @@ exec --no-startup-id xss-lid -- lock-custom
 # udiskie automounts USBs
 exec --no-startup-id xss-lock -- /usr/bin/lock-custom
 exec --no-startup-id udiskie
+
+# Start dunst notification service
+# Might not be needed and not sure why it's there.
+# But dunst stopped working after I installed
+# Deepin (for other user on this PC, while
+# I still use i3).
+exec --no-startup-id dunst
