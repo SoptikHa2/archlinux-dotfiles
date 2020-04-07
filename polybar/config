@@ -48,6 +48,9 @@ label-separator = "   "
 label-focused-foreground = $(colors.foreground)
 label-unfocused-foreground = ${colors.not_important}
 
+; Only show workspaces on the same monitor as bar
+pin-workspaces = true
+
 ; Workspace with notification
 label-urgent-background = ${colors.background_alt}
 label-urgent-padding-left = 1
