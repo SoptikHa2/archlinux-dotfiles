@@ -21,5 +21,5 @@ case $chosen in
 		sudo dhcpcd enp0s20f0u1u4
 		;;
 	$option_vpn)
-		terminator -x "source /home/petr/.zshrc && sudo openconnect $vpn_address -c $vpn_cert -k $vpn_key --csd-user=petr --csd-wrapper ~/archlinux-dotfiles/csd-post.sh"
+		terminator -x "source /home/petr/.zshrc && sudo openconnect $vpn_address -c $vpn_cert -k $vpn_key --csd-user=petr --csd-wrapper ~/archlinux-dotfiles/bin/csd-post.sh"
 esac

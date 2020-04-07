@@ -53,12 +53,12 @@ endpoint.device.tcp6port["53"]="true";
 endpoint.device.tcp6port["22"]="true";
 endpoint.device.tcp6port["631"]="true";
 endpoint.device.tcp6port["445"]="true";
-endpoint.device.MAC["FFFF.FFFF.FFFF"]="true";
+endpoint.device.MAC["$(ip link show wlp2s0 | tail -1 | cut -d' ' -f6)"]="true";
 endpoint.device.protection_extension="3.6.4900.2";
 endpoint.fw["IPTablesFW"]={};
 endpoint.fw["IPTablesFW"].exists="true";
 endpoint.fw["IPTablesFW"].description="IPTables (Linux)";
-endpoint.fw["IPTablesFW"].version="1.6.1";
+endpoint.fw["IPTablesFW"].version="$(iptables --version | cut -d' ' -f2 | tr -d 'v')";
 endpoint.fw["IPTablesFW"].enabled="ok";
 EOF
 
