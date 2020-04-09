@@ -23,6 +23,8 @@ modules-right = muted battery keyboard datetime
 
 font-0 = DejaVu Sans:pixelsize=12;1
 font-1 = FontAwesome:style=Regular:size=12
+font-2 = Nerd Font:pixelsize=12;1
+font-3 = emoji-font:scale=8;1
 
 line-size = 4
 
@@ -47,9 +49,6 @@ label-separator = "   "
 
 label-focused-foreground = $(colors.foreground)
 label-unfocused-foreground = ${colors.not_important}
-
-; Only show workspaces on the same monitor as bar
-pin-workspaces = true
 
 ; Workspace with notification
 label-urgent-background = ${colors.background_alt}
