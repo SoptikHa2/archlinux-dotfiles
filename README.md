@@ -128,5 +128,3 @@ Instead of saving cache to disk, save it to RAM instead. It's faster and it does
 |browser.cache.disk.enable|false||
 |browser.cache.memory.enable|true||
 |browser.cache.memory.capacity|-1|Maximum memory, in KB, used. Use `-1` for auto detection.|
-
-

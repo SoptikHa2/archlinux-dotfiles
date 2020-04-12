@@ -3,6 +3,9 @@
 # Source this from rc file
 
 
+# Unlimited history in file
+export SAVEHIST=999999999
+
 # Add rust path
 source ~/.cargo/env
 export PATH=~/.local/bin:$PATH

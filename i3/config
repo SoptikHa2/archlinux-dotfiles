@@ -177,7 +177,7 @@ gaps inner 10
 gaps outer -10
 
 # Start compton (with xrender backend)
-# exec --no-startup-id compton --daemon --backend xrender
+ exec --no-startup-id picom --daemon --backend xrender
 # Set background
 exec --no-startup-id feh --bg-fill ~/archlinux-dotfiles/wallpaper.png
 # Start polybar
