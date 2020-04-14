@@ -10,4 +10,6 @@ while true; do
 		exit 0
 	fi
 	lastOutput=$(eval "$cmd")
+	echo "=== OUTPUT ==="
+	echo "$lastOutput"
 done
