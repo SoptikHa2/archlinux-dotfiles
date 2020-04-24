@@ -53,7 +53,7 @@ case "$chosen" in
 		cancelled=false
 		;;
 	"$option_next_to_each_other")
-		xrandr --output "$internal" --auto
+		xrandr --output "$internal" --primary --auto
 		xrandr --output "$external" --auto
 		xrandr --output "$internal" --right-of "$external"
 		cancelled=false
