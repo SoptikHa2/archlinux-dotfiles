@@ -44,3 +44,7 @@ alias remote="xfreerdp -u $rdesktop_username -d '$rdesktop_domain' /dynamic-reso
 alias inhibit-sleep="systemd-inhibit --what=handle-lid-switch sleep 6h"
 
 alias dd="echo 'NO YOU IDIOT. Shutting down.'; sleep 2; poweroff"
+
+# Open man pages with vim
+viman () { text=$(\man "$@") && echo "$text" | nvim -R +":set ft=man|so ~/.config/nvim/init.vim" - ; }
+alias man="viman"
