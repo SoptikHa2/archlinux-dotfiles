@@ -10,6 +10,10 @@ autocmd BufReadPost * if @% !~# '\.git[\/\\]COMMIT_EDITMSG$' && line("'\"") > 1 
 "set shellcmdflag=-ic
 " When scrolling, I want to always see few lines above and below cursor
 set scrolloff=5
+" Expand tabs to spaces
+set tabstop=4
+set shiftwidth=0 " Always match tabstop
+set expandtab
 
 "┌────────────────┐
 "│ KEYBOARD REMAP │
@@ -25,6 +29,7 @@ nmap <F5> :make<CR>
 imap <F5> <Esc>:w<CR>:make<CR>
 " Make :make actually :make run in rust files
 autocmd FileType rust cmap make make<Space>run
+"autocmd FileType python cmap make python3
 
 " <C-f> inkscape figures
 " https://github.com/gillescastel/inkscape-figures
@@ -136,7 +141,7 @@ let g:lightline.component_type = {
 let g:lightline.active = { 'right': [[ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ]] }
 
 " Deoplete
-let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup = 0
 "ale, tabnine
 call deoplete#custom#option('sources', {
 \ '_': ['ale', 'tabnine'],
