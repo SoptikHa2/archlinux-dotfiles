@@ -5,6 +5,7 @@
 
 # Unlimited history in file
 export SAVEHIST=999999999
+setopt EXTENDED_HISTORY # logs the start and elapsed time
 
 # Add rust path
 source ~/.cargo/env
