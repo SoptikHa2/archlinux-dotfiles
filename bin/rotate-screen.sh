@@ -4,7 +4,6 @@
 
 # This not only calls xrandr, but also changes laptop touchpad orientation for
 # easy usage
-# xinput set-prop "ELAN469D:00 04F3:304B Touchpad" --type=float "Coordinate Transformation Matrix" 0 -1 1 1 0 0 0 0 1
 target_screen="eDP-1-1"
 # You can find this out by using $(xinput)
 target_touchpad="ELAN469D:00 04F3:304B Touchpad"
