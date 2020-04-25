@@ -4,7 +4,7 @@ ZSH_THEME="mrtazz"
 HIST_STAMPS="yyyy-mm-dd"
 MAGIC_ENTER_OTHER_COMMAND='ls .'
 MAGIC_ENTER_GIT_COMMAND='ls .'
-plugins=(git colored-man-pages magic-enter command-time)
+plugins=(git man-pages magic-enter command-time)
 source $ZSH/oh-my-zsh.sh
 
 # Set secret variables
