@@ -1,6 +1,9 @@
 # archlinux-dotfiles
 Archlinux i3 dotfiles
 
+## Setup
+See xorg conf. Setup keyboard with `localectl set-x11-keymap us,cz pc105 qwerty compose:lwin,caps:swapescape,grp:ctrl_alt_toggle`. See `kbd(4)` and `xkeyboard-config(7)`.
+
 ## Useful hotkeys
 
 |Key combo|Effect|

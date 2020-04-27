@@ -173,8 +173,8 @@ bindsym $mod+r mode "resize"
 ### NEW ###
 
 for_window [class="^.*"] border pixel 0
-gaps inner 10
-gaps outer -10
+gaps inner 0 # 10
+gaps outer 0 # -10
 
 # Start compton (with xrender backend)
  exec --no-startup-id picom --daemon --backend xrender
@@ -186,10 +186,10 @@ exec --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id redshift
 # Setup keyboard
 # # Remap capslock and escape
-exec --no-startup-id setxkbmap -option caps:swapescape
+#exec --no-startup-id setxkbmap -option caps:swapescape
 # # Add compose key
 # # (so meta-~-n produces ñ or meta-^-8 produces ⁸)
-exec --no-startup-id setxkbmap -option compose:lwin
+#exec --no-startup-id setxkbmap -option compose:lwin
 
 # Set dmenu alternative (rofi)
 # Start rofi in combined mode, which allows user to either run new
@@ -200,7 +200,7 @@ bindsym $mod+d exec "rofi -show combi -combi-modi 'window,run' -modi combi"
 bindcode 232 exec brightness-down
 bindcode 233 exec brightness-up
 # Change keyboard
-bindsym $mod+Tab exec /usr/bin/change-keyboard
+#bindsym $mod+Tab exec /usr/bin/change-keyboard
 # Set volume
 bindcode 121 exec pavolume.sh --togmute
 bindcode 122 exec pavolume.sh --down
