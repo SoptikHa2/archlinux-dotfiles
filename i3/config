@@ -221,7 +221,7 @@ bindcode $mod+83 exec "rotate-screen left"
 bindcode $mod+85 exec "rotate-screen right"
 # Lock computer
 #bindcode 133 exec lock-custom
-bindsym $mod+Ctrl+l exec lock-custom
+bindcode $mod+133 exec lock-custom
 # Take a screenshot
 # Use PrtSc to take screenshot. By default it is saved into file.
 # Use Ctrl to save only current window
