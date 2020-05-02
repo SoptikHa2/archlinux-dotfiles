@@ -13,13 +13,15 @@ chosen="$(echo -e "$option_wifi\n$option_ethernet\n$option_vpn" | rofi -theme "n
 
 case $chosen in
 	$option_wifi)
-		sudo ip link set wlp2s0 up
+        rofi-wifi-menu
 		;;
 	$option_ethernet)
-		sudo ip link set wlp2s0 down
-		sudo netctl switch-to ethernet
-		sudo dhcpcd enp0s20f0u1u4
+        # TODO
 		;;
 	$option_vpn)
-		terminator -x "source /home/petr/.zshrc && sudo openconnect $vpn_address -c $vpn_cert -k $vpn_key --csd-user=petr --csd-wrapper ~/archlinux-dotfiles/bin/csd-post.sh"
+        if [[ $(nmcli connection show --active | grep "Alza VPN" -c) -eq 0 ]]; then
+            nmcli connection up "Alza VPN"
+        else
+            nmcli connection down "Alza VPN"
+        fi
 esac
