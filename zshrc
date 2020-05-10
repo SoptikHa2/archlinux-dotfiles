@@ -2,10 +2,12 @@
 export ZSH="/home/petr/.oh-my-zsh"
 ZSH_THEME="mrtazz"
 HIST_STAMPS="yyyy-mm-dd"
-MAGIC_ENTER_OTHER_COMMAND='ls .'
 MAGIC_ENTER_GIT_COMMAND='ls .'
-plugins=(git magic-enter command-time)
+MAGIC_ENTER_OTHER_COMMAND='ls .'
+plugins=(magic-enter command-time)
 source $ZSH/oh-my-zsh.sh
+# Enable syntax highlighting
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Set secret variables
 source ~/archlinux-dotfiles/bin/secret

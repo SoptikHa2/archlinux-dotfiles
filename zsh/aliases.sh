@@ -48,3 +48,13 @@ alias dd="echo 'NO YOU IDIOT. Shutting down.'; sleep 2; poweroff"
 # Open man pages with vim
 viman () { text=$(\man "$@") && echo "$text" | nvim -R +":set ft=man|so ~/.config/nvim/init.vim" - ; }
 alias man="viman"
+
+# Use wine as separate user for at least a bit of security
+runaswine() { xhost +SI:localuser:wineuser && sudo -u wineuser env HOME=/home/wineuser USER=wineuser USERNAME=wineuser LOGNAME=wineuser wine "$@"; }
+alias wine="runaswine"
+
+# Protect myself
+alias rm="rm -I"
+
+# Fuck! run it as root
+alias fuck='sudo $(fc -ln -1)'
