@@ -15,6 +15,9 @@ set tabstop=4
 set shiftwidth=0 " Always match tabstop
 set expandtab
 
+" On leave, set cursor shape to pipe
+au VimLeave * set guicursor=a:ver100-blinkon0
+
 "┌────────────────┐
 "│ KEYBOARD REMAP │
 "└────────────────┘
@@ -91,6 +94,9 @@ Plug 'preservim/nerdtree'
 
 " Jump to definitions/etc (IDE)
 Plug 'pechorin/any-jump.vim'
+
+" Man pages support
+Plug 'vim-utils/vim-man'
 
 call plug#end()
 
@@ -172,4 +178,3 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
 " Toggle with \n
 nnoremap <leader>n :NERDTreeToggle<CR>
-
