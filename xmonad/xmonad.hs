@@ -30,6 +30,8 @@ import XMonad.Hooks.ManageHelpers
 -- Layouts
 import XMonad.Layout.NoBorders
 import XMonad.Layout.Gaps
+import XMonad.Layout.Fullscreen
+import XMonad.Layout.ToggleLayouts
 
 ------------------------------
 --      CONFIGURATION       --
@@ -47,6 +49,8 @@ myKeys = [
         ("M-d", spawn "rofi -show combi -combi-modi 'window,run' -modi combi"),
         -- Display scratch terminal with $mod+Ctrl+Enter
         ("M-C-<Return>", scratchpadSpawnActionTerminal myTerminal),
+        -- Let windows go over the bar
+        ("M-f", (sendMessage ToggleStruts <+> sendMessage NextLayout)),
         -- On $mod+ctrl+w, display window manager
         ("M-C-w", spawn "multimonitor-setup.sh"),
         -- On $mod+shift+e, spawn rofi menu that enables us to reboot/poweroff/reboot to uefi and other. TODO: Quit WM support
@@ -83,7 +87,24 @@ myKeys = [
 ---------------------------
 --         HOOKS         --
 ---------------------------
-myManageHook = manageDocks <+> manageHook defaultConfig <+> manageScratchPad
+
+-- Manage what xmonad does when positioning windows
+--           Don't try to get in way of bars, let them live
+myManageHook = manageDocks 
+--  If we try to fullscreen window, float it (so it's topmost)
+    <+> (isFullscreen --> doFullFloat) 
+-- Manage scratchpad terminal window (doesn't work)
+    <+> manageScratchPad
+-- Load some default config
+    <+> manageHook defaultConfig
+
+myLayoutHook = smartBorders 
+--  Adjust layout automagically, don't cover bars
+    . avoidStruts $
+-- Use some default sane config
+--    layoutHook defaultConfig
+    Tall 1 (3/100) (1/2)
+    ||| Full
 
 
 ----------------------------
@@ -96,7 +117,7 @@ main = do
     -- Notifications
     spawn "dunst"
     -- Lock screen when lid is closed
-    spawn "xss-lid -- lock-custom.sh"
+    spawn "xss-lock -- lock-custom.sh"
     -- Automount USBs
     spawn "udiskie"
     -- Redshift (first of all kill old instances)
@@ -112,11 +133,11 @@ main = do
             modMask = myModMask,
             -- Bar START
             manageHook = myManageHook,
-            layoutHook = avoidStruts $ layoutHook defaultConfig,
+            layoutHook = myLayoutHook,
             handleEventHook = handleEventHook defaultConfig <+> docksEventHook,
             logHook = dynamicLogWithPP $ xmobarPP {
                     ppOutput = hPutStrLn xmproc,
-                    ppTitle = xmobarColor "gray" "" . shorten 50
+                    ppTitle = xmobarColor "gray" "" . shorten 120
                 }
             -- Bar END
         } `additionalKeysP` myKeys -- Append keybindings
