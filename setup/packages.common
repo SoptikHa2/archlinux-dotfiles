@@ -1,0 +1,41 @@
+# Packages to be installed.
+
+# This is NOT compelete list.
+# System packages such as X, network or sound are not
+# handled. There are many user-space applications missing as well.
+
+#;NEEDED
+acpi
+alacritty
+ascii
+blueberry
+bluez-utils
+caprine
+thunderbird
+discord
+firefox
+drive-bin
+fd
+inkscape
+mupdf
+nmap
+riot-desktop
+ripgrep
+rofimoji
+rustup
+vi
+vim
+nvim
+udiskie
+
+
+#;NICETOHAVE
+sl
+neofetch
+cmatrix
+xaos
+asciinema
+bat
+gimp
+jq
+sqlmap
