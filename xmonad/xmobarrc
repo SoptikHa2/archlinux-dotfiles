@@ -1,0 +1,39 @@
+Config {
+       font = "xft:FontAwesome:pixelsize=16,xft:Monospace:pixelsize=18",
+       --font = "xft:Monospace:pixelsize=16",
+       -- used to make the bar appear correctly after Mod-q in older xmonad implementations (0.9.x)
+       -- doesn't seem to do anything anymore (0.10, darcs)
+--       lowerOnStart = False,
+       commands = [
+                Run Date "%Y-%m-%d %H:%M" "date" 10,
+                Run Battery [
+                        "--template", "Battery:  <left><acstatus>  (<timeleft>)",
+                        "--Low", "10",
+                        "--High", "30", -- Anything about 30 is ok
+                        "--low", "red",
+                        "--normal", "darkorange",
+                        "--high", "white",
+                        "--",
+                        "-P",
+                        "-A", "7",
+                        "-a", "notify-send -u critical 'Critical battery!'",
+                        "-O", "+",
+                        "-i", "~",
+                        "-o", ""
+                    ] 50,
+                Run Alsa "hw:0" "Master" [
+                        "-t", "<status>",
+                        "--",
+                        "-o", "  <volume>%",
+                        "-O", " <volume>%",
+                        "-C", "white",
+                        "-c", "grey"
+                    ],
+                Run Kbd [("us", "English (US)"), ("cz(qwerty)", "Czech (QWERTY)")],
+                Run StdinReader
+                ]
+       , sepChar = "%"
+       , alpha = 160
+       , alignSep = "}{"
+       , template = "<fc=#ffffff>%StdinReader%</fc> }{ %alsa:hw:0:Master%   |   <fc=#ffffff>%battery%</fc>   |   <fc=#ffffff>%kbd%</fc>   |   <fc=#ffffff>%date%</fc> |"
+}

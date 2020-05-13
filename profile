@@ -40,11 +40,8 @@ unset TERMCAP
 unset MANPATH
 
 # Start default WM after start (if tty1 and not root user)
-if [[ "$(tty)" == '/dev/tty1' && "$USER" != 'root' ]]; then
+if [[ "$(tty)" == '/dev/tty1' || "$(tty)" == '/dev/tty2' ]] && [[ "$USER" != 'root' ]]; then
 	exec startx
-# Start xmonad if tty2 and not root user
-elif [[ "$(tty)"== '/dev/tty2' && "$USER" != 'root' ]]; then
-	exec startx /bin/xmonad
 fi
 
 # Set default editor to vim
