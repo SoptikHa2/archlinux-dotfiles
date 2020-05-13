@@ -12,6 +12,8 @@ source ~/.cargo/env
 export PATH=~/.local/bin:$PATH
 # Add ruby path
 export PATH=/home/petr/.gem/ruby/2.7.0/bin:$PATH
+# Add all my scripts
+export PATH=~/.local/scripts:$PATH
 
 # Make neovim the default editor (except for ssh, in that case use vim)
 if [[ -n $SSH_CONNECTION ]]; then
