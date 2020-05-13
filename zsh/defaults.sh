@@ -24,10 +24,3 @@ fi
 
 # Disable .net core telemetry
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
-
-# Remap capslock and escape
-setxkbmap -option caps:swapescape
-
-# Add compose key
-# (so meta-~-n produces ñ or meta-^-8 produces ⁸)
-setxkbmap -option compose:lwin
