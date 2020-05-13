@@ -14,6 +14,7 @@ import System.IO
 -- Utilities
 import XMonad.Util.EZConfig
 import XMonad.Util.Run
+import XMonad.Util.Scratchpad
 import XMonad.Util.NamedWindows (getName)
 import qualified XMonad.Util.ExtensibleState as XS
 
@@ -34,7 +35,7 @@ import XMonad.Layout.Gaps
 --      CONFIGURATION       --
 ------------------------------
 myTerminal = "alacritty"
-myExtraWorkspaces = [(xK_0, "Trash")]
+myExtraWorkspaces = [("0", "10"), ("<XF86AudioStop>", "Random")]
 myWorkspaces = map show [1..9] ++ map snd myExtraWorkspaces
 myModMask = mod1Mask -- Alt
 
@@ -44,9 +45,11 @@ myModMask = mod1Mask -- Alt
 myKeys = [ 
         -- On $mod+d, spawn rofi for starting new programs and switching to them
         ("M-d", spawn "rofi -show combi -combi-modi 'window,run' -modi combi"),
-        -- On $mod+shift+e, spawn rofi menu that enables us to reboot/poweroff/reboot to uefi and other. TODO: Quit WM support
+        -- Display scratch terminal with $mod+Ctrl+Enter
+        ("M-C-<Return>", scratchpadSpawnActionTerminal myTerminal),
         -- On $mod+ctrl+w, display window manager
         ("M-C-w", spawn "multimonitor-setup.sh"),
+        -- On $mod+shift+e, spawn rofi menu that enables us to reboot/poweroff/reboot to uefi and other. TODO: Quit WM support
         ("M-S-e", spawn "exit-menu.sh"),
         -- Handle screen lock
         ("M-C-l", spawn "lock-custom.sh"),
@@ -65,14 +68,22 @@ myKeys = [
         ("<XF86MonBrightnessUp>", spawn "change-brightness.sh 1"),
         -- Handle volume up/down + mute, autounmute
         ("<XF86AudioRaiseVolume>", spawn "pavolume.sh --up"),
-        ("<XF86AudioLowerVolume", spawn "pavolume.sh --down"),
+        ("<XF86AudioLowerVolume>", spawn "pavolume.sh --down"),
         ("<XF86AudioMute>", spawn "pavolume.sh --togmute"),
         -- Handle playing/pausing/skipping songs (eg Spotify)
         ("<XF86AudioPrev>", spawn "playerctl previous"),
         ("<XF86AudioNext>", spawn "playerctl next"),
         ("<XF86AudioPlay>", spawn "playerctl play-pause")
+    ] ++
+        -- Add keybindings to change workspace to the extra ones
+        map (\(keybind, windowname) -> ("M-" ++ keybind, windows $ W.greedyView windowname)) myExtraWorkspaces ++
+        -- Add keybdinings to send windows to the extra workspaces
+        map (\(keybind, windowname) -> ("M-S-" ++ keybind, windows $ W.shift windowname)) myExtraWorkspaces
 
-    ]
+---------------------------
+--         HOOKS         --
+---------------------------
+myManageHook = manageDocks <+> manageHook defaultConfig <+> manageScratchPad
 
 
 ----------------------------
@@ -95,11 +106,12 @@ main = do
     
     xmonad $ defaultConfig
         {
+            -- Setup default variables defined above
             terminal = myTerminal,
             workspaces = myWorkspaces,
             modMask = myModMask,
             -- Bar START
-            manageHook = manageDocks <+> manageHook defaultConfig,
+            manageHook = myManageHook,
             layoutHook = avoidStruts $ layoutHook defaultConfig,
             handleEventHook = handleEventHook defaultConfig <+> docksEventHook,
             logHook = dynamicLogWithPP $ xmobarPP {
@@ -107,8 +119,17 @@ main = do
                     ppTitle = xmobarColor "gray" "" . shorten 50
                 }
             -- Bar END
-        } `additionalKeysP` myKeys
+        } `additionalKeysP` myKeys -- Append keybindings
 
 
 
-
+----------------
+-- SCRATCHPAD --
+----------------
+manageScratchPad :: ManageHook
+manageScratchPad = scratchpadManageHook (W.RationalRect l t w h)
+    where
+    h = 0.1     -- Terminal height, in %
+    w = 1       -- Terminal width
+    t = 1 - h   -- distance from top edge
+    l = 1 - w   -- distance from left edge
