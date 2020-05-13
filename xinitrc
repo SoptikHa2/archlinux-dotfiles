@@ -33,13 +33,13 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-# Start WM. i3 if on 1st terminal, xmonad otherwise.
+# Start WM. xmonad if on 1st terminal, i3 otherwise.
 # Note that this script is called ONLY when user is not root
 # AND we are at first or second tty (see /etc/profile),
 # thus i3 and xmonad will only start on firtst two ttys regardless.
 if [ "$(tty)" = "/dev/tty1" ]; then
-    exec i3
-else
     xsetroot -cursor_name left_ptr
     exec xmonad
+else
+    exec i3
 fi
