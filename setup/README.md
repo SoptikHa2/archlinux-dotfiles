@@ -3,6 +3,8 @@
 This contains script that one day should set up and provision functioning
 archlinux install.
 
+The script assumes user has working xorg setup and installed window manager that is supported. Currently: i3 only.
+
 | Script name | Purpose |
 | ----------- | ------- |
 | [setup.sh](setup.sh) | Runs other script that setup particular part of system |

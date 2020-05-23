@@ -14,7 +14,6 @@ caprine
 thunderbird
 discord
 firefox
-drive-bin
 fd
 inkscape
 mupdf
@@ -25,8 +24,20 @@ rofimoji
 rustup
 vi
 vim
-nvim
+neovim
 udiskie
+picom
+base-devel
+git
+dunst
+feh
+python-pip
+xss-lock
+xclip
+xdotool
+maim
+flameshot
+playerctl
 
 
 #;NICETOHAVE
@@ -39,3 +50,8 @@ bat
 gimp
 jq
 sqlmap
+thunderbird-extension-enigmail
+
+#;FONTS
+ttf-dejavu
+ttf-font-awesome

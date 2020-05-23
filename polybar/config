@@ -78,7 +78,7 @@ label-padding = 2
 ; Show if sound is muted
 [module/muted]
 type = custom/script
-exec = get-volume.sh 1 2>/dev/null
+exec = get-volume 1 2>/dev/null
 interval = 1
 label-padding = 2
 

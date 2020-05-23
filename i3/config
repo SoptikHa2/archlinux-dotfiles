@@ -182,7 +182,7 @@ gaps outer 0 # -10
 # Set background
 exec --no-startup-id feh --bg-fill ~/archlinux-dotfiles/wallpaper.png
 # Start polybar
-exec --no-startup-id ~/.config/polybar/launch.sh
+exec --no-startup-id ~/archlinux-dotfiles/polybar/launch.sh
 # Start redshift (blue light filter)
 exec --no-startup-id redshift
 # Setup keyboard
@@ -198,14 +198,14 @@ exec --no-startup-id redshift
 bindsym $mod+d exec "rofi -show combi -combi-modi 'window,run' -modi combi"
 
 # Set brightness
-bindcode 232 exec brightness-down
-bindcode 233 exec brightness-up
+bindcode 232 exec change-brightness 0
+bindcode 233 exec change-brightness 1
 # Change keyboard
 #bindsym $mod+Tab exec /usr/bin/change-keyboard
 # Set volume
-bindcode 121 exec pavolume.sh --togmute
-bindcode 122 exec pavolume.sh --down
-bindcode 123 exec pavolume.sh --up
+bindcode 121 exec pavolume --togmute
+bindcode 122 exec pavolume --down
+bindcode 123 exec pavolume --up
 # Play/pause firefox
 #bindcode 172 exec play-pause-firefox.sh
 # Play/pause next/prev - any player (spotify)
