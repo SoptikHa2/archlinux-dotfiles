@@ -19,7 +19,7 @@ foreground = ${colors.foreground}
 ; MODULES
 modules-left = i3_workspaces
 modules-center = window_name
-modules-right = muted battery keyboard datetime
+modules-right = btbattery muted battery keyboard datetime
 
 font-0 = DejaVu Sans:pixelsize=12;1
 font-1 = FontAwesome:style=Regular:size=12
@@ -82,6 +82,11 @@ exec = get-volume 1 2>/dev/null
 interval = 1
 label-padding = 2
 
+[module/btbattery]
+type = custom/script
+exec = get-bt-battery 2>/dev/null
+interval = 30
+label-padding = 2
 
 ; Show date and time
 [module/datetime]
