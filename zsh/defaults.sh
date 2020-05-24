@@ -8,7 +8,6 @@ export SAVEHIST=999999999
 setopt EXTENDED_HISTORY # logs the start and elapsed time
 
 # Add rust path
-source ~/.cargo/bin
 export PATH=~/.local/bin:~/.cargo/bin:$PATH
 # Add ruby path
 export PATH=/home/petr/.gem/ruby/2.7.0/bin:$PATH
