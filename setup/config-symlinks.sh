@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 # X & i3 symlinks
 ln -s ~/archlinux-dotfiles/xinitrc ~/.xinitrc
 ln -s ~/archlinux-dotfiles/i3/config ~/.config/i3
