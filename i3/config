@@ -106,7 +106,18 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 # Workspace for processes that have to run but I don't care about them (VPN connection, ...)
-set $ws11 "Trash"
+set $wsTrash "Trash"
+# Additional workspaces because 11 is too few
+set $ws11 "11"
+set $ws12 "12"
+set $ws13 "13"
+set $ws14 "14"
+set $ws15 "15"
+set $ws16 "16"
+set $ws17 "17"
+set $ws18 "18"
+set $ws19 "19"
+set $ws20 "20"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -119,7 +130,17 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
-bindcode $mod+174 workspace $ws11
+bindcode $mod+174 workspace $wsTrash
+bindsym ctrl+1 workspace $ws11
+bindsym ctrl+2 workspace $ws12
+bindsym ctrl+3 workspace $ws13
+bindsym ctrl+4 workspace $ws14
+bindsym ctrl+5 workspace $ws15
+bindsym ctrl+6 workspace $ws16
+bindsym ctrl+7 workspace $ws17
+bindsym ctrl+8 workspace $ws18
+bindsym ctrl+9 workspace $ws19
+bindsym ctrl+0 workspace $ws20
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -132,7 +153,17 @@ bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
-bindcode $mod+Shift+174 move container to workspace $ws11
+bindcode $mod+Shift+174 move container to workspace $wsTrash
+bindsym ctrl+Shift+1 move container to workspace $ws11
+bindsym ctrl+Shift+2 move container to workspace $ws12
+bindsym ctrl+Shift+3 move container to workspace $ws13
+bindsym ctrl+Shift+4 move container to workspace $ws14
+bindsym ctrl+Shift+5 move container to workspace $ws15
+bindsym ctrl+Shift+6 move container to workspace $ws16
+bindsym ctrl+Shift+7 move container to workspace $ws17
+bindsym ctrl+Shift+8 move container to workspace $ws18
+bindsym ctrl+Shift+9 move container to workspace $ws19
+bindsym ctrl+Shift+0 move container to workspace $ws20
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
