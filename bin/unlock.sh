@@ -10,8 +10,8 @@ if [ -d "$2" ]; then
 	exit 2
 fi
 
-mkdir "$2"
 gpg --decrypt "$1" > "$1.decrypted"
+mkdir "$2"
 tar -xzvf "$1.decrypted"
 rm "$1"
 shred -u -n1 "$1.decrypted"
