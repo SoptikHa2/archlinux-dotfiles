@@ -9,6 +9,12 @@ if [ -d "$2" ]; then
 	echo "Please provide target directory name that doesn't exist yet as second parameter."
 	exit 2
 fi
+# Try to make the folder, just to see if it works.
+# Delete it afterwards, we will create it later.
+mkdir "$2" || (
+    echo "Failed to create directory »$2«. Did you enter valid name?"
+    exit 3
+)
 
 gpg --decrypt "$1" > "$1.decrypted"
 mkdir "$2"
