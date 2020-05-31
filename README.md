@@ -28,6 +28,7 @@ See xorg conf. Setup keyboard with `localectl set-x11-keymap us,cz pc105 ,qwerty
 |`<C-PrtSc>`|Take a screenshot of current window and save it into `~/data/Pictures`|
 |`<S-C-PrtSc>`|Take a screenshot of current window and save it into clipboard|
 |`<C-Space>`|Dismiss notification|
+|`<C-~>`|Show dismissed notification|
 
 ## Useful aliases
 |Alias|Real command|
