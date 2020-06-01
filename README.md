@@ -19,7 +19,8 @@ See xorg conf. Setup keyboard with `localectl set-x11-keymap us,cz pc105 ,qwerty
 |`<A-Esc>`|Exit gaming mode|
 |`<A-f>`|Toggle fullscreen on currently focused window|
 |`<A-[1,2..0]>`|Switch to i3 workspace 1,2..10|
-|`<A-Enter>`|Start terminator|
+|`<A-Enter>`|Start terminal emulator|
+|`<A-S-Enter>`|Start terminal emulator as scratchpad|
 |`<A-E>`|Exit i3|
 |`<A-jkl;>`|Move window focus|
 |`<A-JKL:>`|Move windows|
