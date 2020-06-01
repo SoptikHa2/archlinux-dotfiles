@@ -29,6 +29,9 @@ See xorg conf. Setup keyboard with `localectl set-x11-keymap us,cz pc105 ,qwerty
 |`<S-C-PrtSc>`|Take a screenshot of current window and save it into clipboard|
 |`<C-Space>`|Dismiss notification|
 |`<C-~>`|Show dismissed notification|
+|`<C-S-Space>`|Toggle floating window|
+|`<A-C-Space>`|Send to scratchpad|
+|`<A-Space>`|Toggle scratchpad|
 
 ## Useful aliases
 |Alias|Real command|
