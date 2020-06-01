@@ -15,6 +15,7 @@ mkdir "$2" || (
     echo "Failed to create directory »$2«. Did you enter valid name?"
     exit 3
 )
+rm "$2" -d
 
 gpg --decrypt "$1" > "$1.decrypted"
 mkdir "$2"

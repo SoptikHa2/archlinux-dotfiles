@@ -25,7 +25,9 @@ for dir in *; do
 			echo "Updating $dir"
 			# Force git pull (assumes master is the main branch)
 			git fetch --all
-			git reset --hard origin/master
+            # Do not worry if we can't reset to master. It might
+            # not exist.
+			git reset --hard origin/master || true
 			makepkg -si --needed # --needed tells pacman not to uselessly reinstall the package
 		)
 	fi
