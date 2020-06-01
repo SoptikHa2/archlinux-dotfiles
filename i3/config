@@ -31,6 +31,8 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec /home/petr/archlinux-dotfiles/bin/launch-alacritty.sh
+# start scratchpad with Alt+Shift+Enter
+bindsym $mod+Shift+Return exec "/home/petr/archlinux-dotfiles/bin/launch-alacritty.sh && i3-msg 'move scratchpad' && i3-msg 'scratchpad show'"
 #bindsym $mod+Return exec alacritty --config-file /dev/null
 
 # kill focused window
@@ -85,7 +87,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+# bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -319,3 +321,7 @@ exec --no-startup-id udiskie
 # Deepin (for other user on this PC, while
 # I still use i3).
 exec --no-startup-id dunst
+
+# Scratchpad
+bindsym $mod+ctrl+space move scratchpad; scratchpad show
+bindsym $mod+space scratchpad show
