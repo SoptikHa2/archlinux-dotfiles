@@ -30,7 +30,7 @@ font pango:DejaVu Sans Mono 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec /home/petr/archlinux-dotfiles/bin/launch-alacritty.sh
+bindsym $mod+Return --release exec alacritty
 # start scratchpad with Alt+Shift+Enter
 bindsym $mod+Shift+Return exec "/home/petr/archlinux-dotfiles/bin/launch-alacritty.sh && i3-msg 'move scratchpad' && i3-msg 'scratchpad show'"
 #bindsym $mod+Return exec alacritty --config-file /dev/null
