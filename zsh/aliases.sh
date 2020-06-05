@@ -19,7 +19,6 @@ alias gaa="git add -u"
 
 # Misc aliases
 alias sudo="sudo -E -H" # -E to preserve env variables, -H to not preserve $HOME variable and set it to target user instead
-alias please="sudo"
 alias wifi="please wifi-menu"
 alias today="date +'%Y-%m-%d'"
 alias now="date +'%Y-%m-%d %H-%M-%S'"
@@ -56,5 +55,13 @@ alias wine="runaswine"
 # Protect myself
 alias rm="rm -I"
 
-# Fuck! run it as root
+# Kira!
+alias kira="killall"
+
+# Fuck! run it as root (or please! run it as root! I beg you!)
 alias fuck='sudo $(fc -ln -1)'
+alias please='fuck'
+
+# I meant to quit
+alias :q='exit'
+
