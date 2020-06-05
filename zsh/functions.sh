@@ -8,3 +8,13 @@ cheatsh () {
 	# And remove all ansi color codes
 	# Credit: https://unix.stackexchange.com/questions/55546/removing-color-codes-from-output#55547
 }
+
+# Decrypt from clipboard
+declip () {
+xclip -o | gpg -d
+}
+
+# Encrypt from "$1" for user "$2" and save to clipboard
+enclip () {
+echo "$1" | gpg --hidden-recipient "$2" --armor --encrypt - | xclip
+}
