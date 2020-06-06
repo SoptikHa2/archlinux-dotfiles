@@ -19,6 +19,8 @@ rm "$2" -d
 
 gpg --decrypt "$1" > "$1.decrypted"
 mkdir "$2"
+echo "Decrypted. Untarring."
 tar -xzvf "$1.decrypted"
 rm "$1"
+echo "Shredding"
 shred -u -n1 "$1.decrypted"
