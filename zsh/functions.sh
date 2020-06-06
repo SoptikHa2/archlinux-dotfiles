@@ -33,3 +33,19 @@ BEGIN { FS="] " }
 fi
 echo "$text" | gpg --recipient "$recipient" --armor --encrypt - | xclip
 }
+
+# If invoked without arguments, repeat last command with sudo.
+# If invoked with arguments, act as alias to sudo.
+please () {
+    if [ $# -ge 1 ]; then
+        sudo "$@"
+    else
+        # Safety: we need to split the command in history
+        # in order to separate command and arguments.
+        # Note that this command breaks if we use it to
+        # process commands with spaces or something like that,
+        # but that's the price we need to pay.
+        # shellcheck disable=SC2046
+        sudo $(fc -ln -1)
+    fi
+}

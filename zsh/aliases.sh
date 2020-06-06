@@ -58,9 +58,8 @@ alias rm="rm -I"
 # Kira!
 alias kira="killall"
 
-# Fuck! run it as root (or please! run it as root! I beg you!)
+# Fuck! run it as root
 alias fuck='sudo $(fc -ln -1)'
-alias please='fuck'
 
 # I meant to quit
 alias :q='exit'
