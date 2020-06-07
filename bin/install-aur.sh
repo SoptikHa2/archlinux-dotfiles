@@ -1,6 +1,5 @@
 #!/bin/bash
 
-(
 set -eo pipefail
 
 if [[ -z "$1"  ]]; then
@@ -23,8 +22,5 @@ else
     cd ..
     rm -rf "$1"
 fi
-) || (
-echo "Install failed. Deleting directory."
-rm -rf "$1"
-)
+
 
