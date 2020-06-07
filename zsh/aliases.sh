@@ -29,8 +29,8 @@ alias xclip="xclip -selection clipboard"
 # Make bc load math libraries (-l) and start in quiet mode (-q)
 alias bc="bc -lq"
 
-# Don't ever page when using bat
-alias bat="bat --paging never"
+# Make bat behave more like cat and less like less
+alias bat="bat ---style=plain,header,grid --paging never"
 
 # Make x11vnc use password and ssl by default
 alias x11vnc="x11vnc -usepw -ssl"
