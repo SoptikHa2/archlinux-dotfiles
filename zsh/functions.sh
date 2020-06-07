@@ -15,21 +15,23 @@ declip () {
 xclip -o | gpg -d
 }
 
-# Encrypt from "$1" for user "$2" and save to clipboard
+# Encrypt message "$1" for user "$2" and save to clipboard
 enclip () {
 text="$1"
 recipient="$2"
 if [ -z "$text" ]; then
-    text=$(echo "Message to encrypt" | rofi -dmenu)
+    text=$(rofi -dmenu -p "Message to encrypt")
     if [ -z "$text" ]; then return; fi
 fi
 if [ -z "$recipient" ]; then
-    recipient=$(gpg --list-public-keys | awk '
+    recipients=$(gpg --list-public-keys | awk '
 BEGIN { FS="] " }
 /^pub/ { status=1 }
 /^ / { if (status == 1) { fingerprint=gensub(/ /, "", "g", $1); status=2 } }
-/^uid/ { if (status == 2) { status = 0; print fingerprint " " $2 } }' | rofi -dmenu -i | cut -d" " -f1)
-    if [ -z "$recipient" ]; then return; fi
+/^uid/ { if (status == 2) { status = 0; print fingerprint " " $2 } }')
+    recipient_idx=$(echo "$recipients" | cut --complement -d" " -f1 | rofi -dmenu -i -p "Recipient" -format i)
+    if [ -z "$recipient_idx" ]; then return; fi
+    recipient=$(echo "$recipients" | sed -n "$((recipient_idx+1))p" | cut -d" " -f1)
 fi
 echo "$text" | gpg --recipient "$recipient" --armor --encrypt - | xclip
 }
