@@ -11,7 +11,7 @@ alias truevim="/usr/bin/vim"
 
 # Git aliases
 alias ga="git add"
-alias gc="git commit"
+alias gc="git commit -v"
 alias gs="git status"
 alias gd="git diff"
 alias gds="git diff --staged"
@@ -63,4 +63,7 @@ alias fuck='sudo $(fc -ln -1)'
 
 # I meant to quit
 alias :q='exit'
+
+# Yeah, I really felt the need to script this for a solid hour
+alias alterncase="sed '"'s/(.)(.)?/\u\1\l\2/g'"' -E"
 
