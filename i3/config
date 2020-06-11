@@ -164,8 +164,6 @@ bindsym ctrl+Shift+7 move container to workspace $ws17
 bindsym ctrl+Shift+8 move container to workspace $ws18
 bindsym ctrl+Shift+9 move container to workspace $ws19
 
-# reload the configuration file
-bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # offer shutdown menu
@@ -327,4 +325,7 @@ bindsym $mod+ctrl+space move scratchpad; scratchpad show
 bindsym $mod+space scratchpad show
 
 # OCR copy text to clipboard
+# (english)
 bindsym $mod+c exec copy-from-screen
+# (czech)
+bindsym $mod+shift+c exec copy-from-screen ces
