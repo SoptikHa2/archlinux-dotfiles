@@ -45,7 +45,7 @@ alias inhibit-sleep="systemd-inhibit --what=handle-lid-switch sleep 6h"
 alias dd="echo 'NO YOU IDIOT. Shutting down.'; sleep 2; poweroff"
 
 # Open man pages with vim
-viman () { text=$(\man "$@") && echo "$text" | nvim -R +":set ft=man|so ~/.config/nvim/init.vim" - ; }
+viman () { text=$(\man "$@") && echo -E "$text" | nvim -R +":set ft=man|so ~/.config/nvim/init.vim" - ; }
 alias man="viman"
 
 # Use wine as separate user for at least a bit of security
