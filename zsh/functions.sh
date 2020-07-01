@@ -51,3 +51,37 @@ please () {
         sudo $(fc -ln -1)
     fi
 }
+
+# Lambda: duplicates stdin and saves it into usable variable
+# Example:
+# printf 'abc def\nghi\n' | lambda x | wc -l; wc -w <<<$x
+# 2
+# 3
+function lambda {
+	# We need at least one argument to be useful
+	if [[ $# -le 0 ]]; then
+		echo "lambda: warn: Specify at least one variable in which will be copied stdin." >&2
+	fi
+
+	# Empty variable that will be used to store stdin
+	lambda_function_internal__stdin_collected=""
+	# Read stdin
+	while IFS="" read -r lambda_function_internal__STDIN; do
+		# For each line of input, append it to collected stdin with a newline
+		lambda_function_internal__stdin_collected="$lambda_function_internal__stdin_collected$lambda_function_internal__STDIN\n"
+	done
+	# Remove last newline (that shouldn't be there) from collected stdin
+	lambda_function_internal__stdin_collected="$(echo $lambda_function_internal__stdin_collected | sed 'x;2,$p' -n)"
+
+	# Save the collected stdin to variable specified by user
+	
+	# Save stdin into the variable
+	# Typeset cannot be used here, since the variable would be local only afterwards.
+	# DANGER!! POTENTIAL CODE EXECUTION VULNERABILITY!!
+	for lambda_function_internal__variable_name in "$@"; do
+		eval "$lambda_function_internal__variable_name='$lambda_function_internal__stdin_collected'"
+	done
+
+	# Output captured stdin
+	echo $lambda_function_internal__stdin_collected
+}
