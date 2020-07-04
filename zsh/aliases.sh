@@ -67,3 +67,9 @@ alias :q='exit'
 # Yeah, I really felt the need to script this for a solid hour
 alias alterncase="sed '"'s/(.)(.)?/\u\1\l\2/g'"' -E"
 
+# This file is becoming absurd the more you scroll
+alias whoami="printf \"nobody. You're nothing and you'll never acomplish anything. You're just a void, a hole in this universe full of awesomness. Thousands of years,\
+humans lived and died just for you to exist for few years! And what are you doing? Reading my dotfiles instead of doing something useful. What are you\
+waiting for? Just go! Go outside! GO OUTSIDE! Do you have a crush on someone? TELL THEM. RIGHT NOW. Don't wait. MESSAGE THEM RIGHT NOW. Did you already\
+find the one? TELL THEM. RIGHT NOW. It'll make them happy. You have noone yet? GO OUTSIDE. Grab few friends AND GO. There is whole world ahead of you.\
+Who knows, you could be root tomorrow. Btw, you are %s.\n\" \"$(\whoami)\""
