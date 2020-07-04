@@ -34,8 +34,8 @@ See xorg conf. Setup keyboard with `localectl set-x11-keymap us,cz pc105 ,qwerty
 |`<A-C-Space>`|Send to scratchpad|
 |`<A-Space>`|Toggle scratchpad|
 
-## Useful aliases
-|Alias|Real command|
+## Useful aliases and functions
+|Alias\|Function|Real command\|Description|
 |---|---|
 |`please`|`sudo`|
 |`ga`|`git add`|
@@ -44,7 +44,8 @@ See xorg conf. Setup keyboard with `localectl set-x11-keymap us,cz pc105 ,qwerty
 |`gd`|`git diff`|
 |`gds`|`git diff --staged` (works on files that were `ga`'ed)|
 |`gaa`|`git add -u` (adds all tracked modified files)|
-|`wifi`|`please wifi-menu`|
+|`enclip`|Encrypt text to recipient via GPG and save to clipboard|
+|`declip`|Decrypt PGP message saved in clipboard|
 
 ## Tips & tricks
 |Trick|Description|
