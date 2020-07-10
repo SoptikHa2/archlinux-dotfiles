@@ -2,9 +2,9 @@
 set -euo pipefail
 
 echo Overwriting /etc/profile
-cp ../x/profile /etc/profile
+sudo cp ../x/profile /etc/profile
 echo Installing packages
-./install-packages.sh
+./install-packages.sh packages.common
 echo Installing mandatory AUR packages
 ./prepare-aur.sh
 echo Setting up symlinks

@@ -1,1 +1,1 @@
-pacman -Syu $(grep '^[^#].*' "$1")
+sudo pacman -Syu $(grep '^[^#].*' "$1") --needed

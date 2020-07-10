@@ -4,7 +4,8 @@
 ln -s ~/archlinux-dotfiles/xinitrc ~/.xinitrc
 ln -s ~/archlinux-dotfiles/i3/config ~/.config/i3
 for f in ~/archlinux-dotfiles/x/xorg.conf.d/*; do
-	ln -s "$f" /etc/X11/xorg.conf.d
+	echo "Linking $f -> /etc/X11/xorg.conf.d"
+	sudo ln -sf "$f" /etc/X11/xorg.conf.d
 done
 
 # Polybar
@@ -24,5 +25,6 @@ ln -s ~/archlinux-dotfiles/dunstrc ~/.config/dunst
 # Custom scripts
 for file in ~/archlinux-dotfiles/bin/*; do
 	path_without_sh=$(basename "$file" | cut -d'.' -f1)
-	ln -s "$file" /usr/bin/"$path_without_sh"
+	echo "Linking $file -> /usr/bin/$path_without_sh"
+	sudo ln -sf "$file" /usr/bin/"$path_without_sh"
 done

@@ -38,6 +38,8 @@ xdotool
 maim
 flameshot
 playerctl
+wget
+curl
 
 
 #;NICETOHAVE
@@ -50,7 +52,7 @@ bat
 gimp
 jq
 sqlmap
-thunderbird-extension-enigmail
+htop
 
 #;FONTS
 ttf-dejavu
