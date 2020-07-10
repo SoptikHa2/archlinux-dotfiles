@@ -7,7 +7,7 @@ MAGIC_ENTER_OTHER_COMMAND='ls .'
 plugins=(magic-enter command-time)
 source $ZSH/oh-my-zsh.sh
 # Enable syntax highlighting
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Set secret variables
 source ~/archlinux-dotfiles/bin/secret
