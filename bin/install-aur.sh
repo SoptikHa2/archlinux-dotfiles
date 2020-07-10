@@ -7,12 +7,13 @@ if [[ -z "$1"  ]]; then
     exit 1
 fi
 if [[ -e "$1" ]]; then
-    echo "Error: $1 already exists." >&2
-    exit 1
+    echo "Warn: $1 already exists." >&2
+else
+    git clone "https://aur.archlinux.org/$1.git" "$1"
 fi
 
-git clone "https://aur.archlinux.org/$1.git" "$1"
 cd "$1"
+git pull --force
 bat -- *
 echo "Install? [y/N]"
 read -r install
