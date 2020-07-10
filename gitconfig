@@ -1,0 +1,6 @@
+[user]
+	email = petr@soptik.tech
+	name = Petr Šťastný
+	signingkey = 9DF928DF3EA2760421B1ED3C3BE4507F2C0C2FB6
+[commit]
+	gpgsign = true

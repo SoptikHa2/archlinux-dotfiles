@@ -22,6 +22,9 @@ ln -s ~/archlinux-dotfiles/alacritty.yml ~/.config/alacritty.yml
 mkdir -p ~/.config/dunst
 ln -s ~/archlinux-dotfiles/dunstrc ~/.config/dunst
 
+# Git
+ln -s ~/archlinux-dotfiles/gitconfig ~/.gitconfig
+
 # Custom scripts
 for file in ~/archlinux-dotfiles/bin/*; do
 	path_without_sh=$(basename "$file" | cut -d'.' -f1)
