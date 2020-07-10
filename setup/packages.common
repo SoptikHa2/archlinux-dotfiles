@@ -40,6 +40,8 @@ flameshot
 playerctl
 wget
 curl
+profile-sync-daemon
+tar
 
 
 #;NICETOHAVE

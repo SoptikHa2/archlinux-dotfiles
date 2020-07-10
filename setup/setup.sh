@@ -9,3 +9,5 @@ echo Installing mandatory AUR packages
 ./prepare-aur.sh
 echo Setting up symlinks
 ./config-symlinks.sh
+echo Setting up firefox
+./setup-firefox.sh
