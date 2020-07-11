@@ -208,7 +208,7 @@ gaps outer 0 # -10
 # Start compton (with xrender backend)
  exec --no-startup-id picom --daemon --backend xrender
 # Set background
-exec --no-startup-id feh --bg-fill ~/archlinux-dotfiles/wallpaper.png
+exec --no-startup-id feh --bg-fill ~/archlinux-dotfiles/wallpaper.jpg
 # Start polybar
 exec --no-startup-id ~/archlinux-dotfiles/polybar/launch.sh
 # Start redshift (blue light filter)
