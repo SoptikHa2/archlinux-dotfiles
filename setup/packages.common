@@ -55,6 +55,8 @@ gimp
 jq
 sqlmap
 htop
+units
+bc
 
 #;FONTS
 ttf-dejavu
