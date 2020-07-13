@@ -8,6 +8,9 @@ for f in ~/archlinux-dotfiles/x/xorg.conf.d/*; do
 	sudo ln -sf "$f" /etc/X11/xorg.conf.d
 done
 
+# Sysctl
+ln -sf ~/archlinux-dotfiles/sysctl.d/*.conf /etc/sysctl.d
+
 # Polybar
 mkdir -p ~/.config/polybar
 ln -sf ~/archlinux-dotfiles/polybar/config ~/.config/polybar
