@@ -2,7 +2,7 @@
 set -euo pipefail
 
 mkdir ~/AUR -p
-for package in polybar; do
+for package in polybar ttf-font-awesome-4; do
 	cd ~/AUR
 	git clone https://aur.archlinux.org/$package.git
 	cd $package
