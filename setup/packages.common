@@ -60,4 +60,5 @@ bc
 
 #;FONTS
 ttf-dejavu
-ttf-font-awesome
+noto-fonts
+noto-fonts-emoji
