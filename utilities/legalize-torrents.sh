@@ -87,7 +87,7 @@ if [ "$apname" == "eduroam" ] || [ $debug -eq 1 ]; then
         exit 0
     fi
 
-    kill_transmission
+    kill_transmission || true
 
     mv "$TRANSMISSION_ROOT/torrents" "$TRANSMISSION_ROOT/.torrents_illegal"
     ln -s "$TRANSMISSION_ROOT/torrents_legal" "$TRANSMISSION_ROOT/torrents"
@@ -97,7 +97,7 @@ else
         exit 0
     fi
 
-    kill_transmission
+    kill_transmission || true
 
     rm "$TRANSMISSION_ROOT/torrents"
     mv "$TRANSMISSION_ROOT/.torrents_illegal" "$TRANSMISSION_ROOT/torrents"
