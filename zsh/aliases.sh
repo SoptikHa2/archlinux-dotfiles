@@ -64,6 +64,8 @@ alias fuck='sudo $(fc -ln -1)'
 # I meant to quit
 alias :q='exit'
 
+alias nmapa='nmap'
+
 # Yeah, I really felt the need to script this for a solid hour
 alias alterncase="sed '"'s/(.)(.)?/\u\1\l\2/g'"' -E"
 
