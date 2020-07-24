@@ -21,9 +21,8 @@ au VimLeave * set guicursor=a:ver100-blinkon0
 "┌────────────────┐
 "│ KEYBOARD REMAP │
 "└────────────────┘
-" kj => Esc in insert mode, Ctrl+c in command mode
-inoremap kj <Esc>
-cnoremap kj <C-C> 
+" On ZZ in insert mode, save and exit instead
+inoremap ZZ <Esc>ZZ
 " Lets save without leaving insert mode
 inoremap <C-S> <Esc>:w<CR>a
 
@@ -131,7 +130,7 @@ let g:UltiSnipsSnippetDirectories = ['ultisnippets']
 " Lightline
 let g:lightline = {
 	\ 'colorscheme': 'wombat',
-	\ }
+    \ }
 let g:lightline.component_expand = {
       \  'linter_checking': 'lightline#ale#checking',
       \  'linter_warnings': 'lightline#ale#warnings',
