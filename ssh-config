@@ -1,0 +1,11 @@
+#Compression yes
+
+Host junko
+    User root
+    HostName soptik.tech
+Host sayaka
+    User pi
+    HostName sayaka
+Host rpi4
+    User pi
+    HostName 192.168.3.10
