@@ -34,6 +34,11 @@ ln -sf ~/archlinux-dotfiles/zshrc ~/.zshrc
 # Nvim
 ln -sf ~/archlinux-dotfiles/nvim ~/.config/nvim
 
+# SSH
+ln -sf ~/archlinux-dotfiles/ssh-config ~/.ssh/config
+ln -sf ~/archlinux-dotfiles/pam_environment ~/.pam_environment
+ln -sf ~/archlinux-dotfiles/systemd-user/ssh-agent.service ~/.config/systemd/user/ssh-agent.service
+
 # Custom scripts
 for file in ~/archlinux-dotfiles/bin/*; do
 	path_without_sh=$(basename "$file" | cut -d'.' -f1)

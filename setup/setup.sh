@@ -11,3 +11,5 @@ echo Setting up symlinks
 ./config-symlinks.sh
 echo Setting up firefox
 ./setup-firefox.sh
+echo Setting up services
+./enable-services.sh

@@ -52,6 +52,4 @@ echo "Continue?"
 read -r
 psd
 sed -i 's/#BROWSERS=()/BROWSERS=(firefox)/' ~/.config/psd/psd.conf
-systemctl --user enable psd.service
-systemctl --user start psd.service
 ) || ./setup-firefox.sh
