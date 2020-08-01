@@ -59,43 +59,45 @@ Plug 'lervag/vimtex'
 " Snippets plugin
 Plug 'sirver/ultisnips'
 
-" Colored parenthesis (LISP)
-Plug 'junegunn/rainbow_parentheses.vim'
+if !exists('g:vscode')
+    " Colored parenthesis (LISP)
+    Plug 'junegunn/rainbow_parentheses.vim'
 
-" Rust
-Plug 'rust-lang/rust.vim'
+    " Rust
+    Plug 'rust-lang/rust.vim'
 
-" Asynchronous Lint Engin (make nvim IDE again!)
-Plug 'w0rp/ALE'
+    " Asynchronous Lint Engin (make nvim IDE again!)
+    Plug 'w0rp/ALE'
 
-" Airline (the bar at the bottom)
-"Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
+    " Airline (the bar at the bottom)
+    "Plug 'vim-airline/vim-airline'
+    "Plug 'vim-airline/vim-airline-themes'
 
-" Lightline (the bar at the bottom)
-Plug 'itchyny/lightline.vim'
-Plug 'maximbaz/lightline-ale'
+    " Lightline (the bar at the bottom)
+    Plug 'itchyny/lightline.vim'
+    Plug 'maximbaz/lightline-ale'
 
-" Deoplete (autocompletion)
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    " Deoplete (autocompletion)
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
-" TabNine (autocompletion)
-"Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
+    " TabNine (autocompletion)
+    "Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
 
-" Racer (autocompletion)
-Plug 'racer-rust/vim-racer'
+    " Racer (autocompletion)
+    Plug 'racer-rust/vim-racer'
 
-" Resotre view (save folds inbetween vim sessions)
-Plug 'vim-scripts/restore_view.vim'
+    " Resotre view (save folds inbetween vim sessions)
+    Plug 'vim-scripts/restore_view.vim'
 
-" File browser
-Plug 'preservim/nerdtree'
+    " File browser
+    Plug 'preservim/nerdtree'
 
-" Jump to definitions/etc (IDE)
-Plug 'pechorin/any-jump.vim'
+    " Jump to definitions/etc (IDE)
+    Plug 'pechorin/any-jump.vim'
 
-" Man pages support
-Plug 'vim-utils/vim-man'
+    " Man pages support
+    Plug 'vim-utils/vim-man'
+endif
 
 call plug#end()
 
