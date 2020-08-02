@@ -1,4 +1,5 @@
 #Compression yes
+AddKeysToAgent yes
 
 Host junko
     User root

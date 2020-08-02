@@ -38,6 +38,9 @@ alias x11vnc="x11vnc -usepw -ssl"
 # Remote Desktop alias to work
 alias remote="xfreerdp -u $rdesktop_username -d '$rdesktop_domain' /dynamic-resolution -f $rdesktop_pcname"
 
+# Nice python interpreter
+alias p="ipython"
+
 # System-inhibit that prevents laptop from going to sleep with closed lid. Useful when switching to bigger monitor.
 # This is a blocking call, and stopping it <C-c> will stop the effect.
 alias inhibit-sleep="systemd-inhibit --what=handle-lid-switch sleep 12h"
