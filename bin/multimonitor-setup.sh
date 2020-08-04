@@ -46,8 +46,8 @@ case "$chosen" in
 		xrandr --output "$external" --off 2>/dev/null
 		cancelled=false
         # Set alacritty font to small
-        sed -Ei 's/#(size: 9\.0)/\1/' ~/archlinux-dotfiles/alacritty.yml
-        sed -Ei 's/(size: 12\.0)/#\1/' ~/archlinux-dotfiles/alacritty.yml
+        sed -Ei 's/^  #(size: 9\.0)/  \1/' ~/archlinux-dotfiles/alacritty.yml
+        sed -Ei 's/^  (size: 12\.0)/  #\1/' ~/archlinux-dotfiles/alacritty.yml
 		;;
 	"$option_external")
 		#xrandr --output "$external" --auto
@@ -56,8 +56,8 @@ case "$chosen" in
 		xrandr --output "$internal" --off 2>/dev/null
 		cancelled=false
         # Set alacritty font to large
-        sed -Ei 's/(size: 9\.0)/#\1/' ~/archlinux-dotfiles/alacritty.yml
-        sed -Ei 's/#(size: 12\.0)/\1/' ~/archlinux-dotfiles/alacritty.yml
+        sed -Ei 's/^  (size: 9\.0)/  #\1/' ~/archlinux-dotfiles/alacritty.yml
+        sed -Ei 's/^  #(size: 12\.0)/  \1/' ~/archlinux-dotfiles/alacritty.yml
 		;;
 	"$option_next_to_each_other")
 		xrandr --output "$internal" --primary --auto
