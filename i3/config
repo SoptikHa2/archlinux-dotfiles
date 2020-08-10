@@ -331,10 +331,6 @@ exec --no-startup-id udiskie
 # I still use i3).
 exec --no-startup-id dunst
 
-# Scratchpad
-bindsym $mod+ctrl+space move scratchpad; scratchpad show
-bindsym $mod+space scratchpad show
-
 # OCR copy text to clipboard
 # (english)
 bindsym $mod+c exec copy-from-screen
