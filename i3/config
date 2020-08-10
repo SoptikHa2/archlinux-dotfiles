@@ -95,6 +95,11 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+# When on workspace 1 and switching to workspace 2,
+# trying to switch to workspace 2 again switches me
+# to the previous one again
+workspace_auto_back_and_forth yes
+
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
@@ -119,6 +124,8 @@ set $ws16 "16"
 set $ws17 "17"
 set $ws18 "18"
 set $ws19 "19"
+# Workspace to quickly hide opened windows
+set $wsEmpty "Empty"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -251,6 +258,8 @@ bindcode $mod+85 exec "rotate-screen right"
 # Lock computer
 #bindcode 133 exec lock-custom
 bindsym $mod+Ctrl+l exec lock-custom
+# Use mod+space to hide everything currently onscreen by fullscreen feh
+bindcode $mod+65 workspace $wsEmpty
 # Take a screenshot
 # Use PrtSc to take screenshot. By default it is saved into file.
 # Use Ctrl to save only current window
