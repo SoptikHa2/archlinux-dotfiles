@@ -290,9 +290,9 @@ mode $gamingMode {
 	bindsym $mod+Shift+q kill
 	# Set volume hotkeys
 	# 121 - mute, 122 - down, 123 - up
-	bindcode 121 exec pactl set-sink-volume 0 0
-	bindcode 122 exec pactl set-sink-volume 0 -5%
-	bindcode 123 exec pactl set-sink-volume 0 +5%
+    bindcode 121 exec pavolume --togmute
+    bindcode 122 exec pavolume --down
+    bindcode 123 exec pavolume --up
 
 	# Set brightness
 	# 232 - lower brightness, 233 - increase brightness
