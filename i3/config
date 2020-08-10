@@ -336,3 +336,10 @@ exec --no-startup-id dunst
 bindsym $mod+c exec copy-from-screen
 # (czech)
 bindsym $mod+shift+c exec copy-from-screen ces
+
+# Focus some windows on $mod+Function key
+bindsym $mod+F1 [class="firefox"] focus
+bindsym $mod+F2 [class="Alacritty"] focus
+bindsym $mod+F3 [class="discord"] focus
+bindsym $mod+F4 [class="Caprine"] focus
+bindsym $mod+F5 [class="Thunderbird"] focus

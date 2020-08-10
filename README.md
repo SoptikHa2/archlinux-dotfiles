@@ -32,6 +32,11 @@ See xorg conf. Setup keyboard with `localectl set-x11-keymap us,cz pc105 ,qwerty
 |`<C-~>`|Show dismissed notification|
 |`<C-S-Space>`|Toggle floating window|
 |`<A-S>`|Toggle between current workspace and empty workspace|
+|`<A-F1>`|Focus Firefox|
+|`<A-F2>`|Focus latest Alacritty|
+|`<A-F3>`|Focus Discord|
+|`<A-F4>`|Focus Caprine|
+|`<A-F5>`|Focus Thunderbird|
 
 ## Useful aliases and functions
 |Alias\|Function|Real command\|Description|
