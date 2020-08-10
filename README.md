@@ -31,8 +31,7 @@ See xorg conf. Setup keyboard with `localectl set-x11-keymap us,cz pc105 ,qwerty
 |`<C-Space>`|Dismiss notification|
 |`<C-~>`|Show dismissed notification|
 |`<C-S-Space>`|Toggle floating window|
-|`<A-C-Space>`|Send to scratchpad|
-|`<A-Space>`|Toggle scratchpad|
+|`<A-S>`|Toggle between current workspace and empty workspace|
 
 ## Useful aliases and functions
 |Alias\|Function|Real command\|Description|
