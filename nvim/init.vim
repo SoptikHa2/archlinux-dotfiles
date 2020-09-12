@@ -18,6 +18,13 @@ set expandtab
 " On leave, set cursor shape to pipe
 au VimLeave * set guicursor=a:ver100-blinkon0
 
+" Don't show line numbers in manpages. It interferes with manpage layout,
+" as it flows to another line.
+if &filetype == "man"
+    set nonumber
+    set norelativenumber
+endif
+
 "┌────────────────┐
 "│ KEYBOARD REMAP │
 "└────────────────┘
