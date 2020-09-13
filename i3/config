@@ -29,6 +29,12 @@ font pango:DejaVu Sans Mono 8
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# Initialize master layout switcher
+exec --no-startup-id python3 $HOME/.config/i3/i3-master-stack/i3_master
+bindsym $mod+m nop swap master
+bindsym $mod+shift+m nop go master
+bindsym $mod+ctrl+m nop master toggle
+
 # start a terminal
 bindsym $mod+Return --release exec alacritty
 # start scratchpad with Alt+Shift+Enter
