@@ -3,10 +3,13 @@ AddKeysToAgent yes
 
 Host junko
     User root
-    HostName soptik.tech
+    HostName 167.71.35.104
 Host sayaka
     User pi
     HostName sayaka
 Host rpi4
     User pi
     HostName 192.168.3.10
+Host lain
+    User vps
+    HostName 185.119.98.156
