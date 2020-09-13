@@ -30,7 +30,7 @@ font pango:DejaVu Sans Mono 8
 floating_modifier $mod
 
 # Initialize master layout switcher
-exec --no-startup-id python3 $HOME/.config/i3/i3-master-stack/i3_master
+exec --no-startup-id python3 ~/.config/i3/i3-master-stack/i3_master_layout.py
 bindsym $mod+m nop swap master
 bindsym $mod+shift+m nop go master
 bindsym $mod+ctrl+m nop master toggle
