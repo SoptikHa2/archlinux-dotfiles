@@ -85,3 +85,26 @@ function lambda {
 	# Output captured stdin
 	echo $lambda_function_internal__stdin_collected
 }
+
+# Progtest functions
+function g {
+    SOURCE="main.c"
+    if [[ ! -f "main.c" ]]; then
+        for file in *.c; do
+            SOURCE="$file"
+        done
+    fi
+    gcc -Wall -pedantic -O1 -g "$SOURCE" -o "$SOURCE.bin"
+    # TODO: Test
+}
+function vg {
+    BINNAME="main.c.bin"
+    if [[ ! -f "main.c.bin" ]]; then
+        for file in *.c; do
+            BINNAME="$file"
+        done
+    fi
+    valgrind --leak-check=full "./$SOURCE.bin"
+}
+
+

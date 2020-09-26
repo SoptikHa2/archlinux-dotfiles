@@ -277,7 +277,6 @@ bindsym Ctrl+Print exec maim -i $(xdotool getactivewindow) ~/data/Pictures/Scree
 bindsym Shift+Ctrl+Print exec maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
 bindsym $mod+s exec manual-selection-screenshot
 # Custom menus
-bindsym $mod+w exec connection-menu
 bindsym $mod+t exec multimonitor-setup
 # Make window sticky with alt+shift+s
 bindsym $mod+shift+s sticky toggle

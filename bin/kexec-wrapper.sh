@@ -5,6 +5,6 @@
 # This needs to be run as root.
 
 # Tell kexec what to boot
-kexec -l /boot/vmlinuz-linux --initrd=/boot/initramfs-linux.img --reuse-cmdline
+kexec -l /boot/vmlinuz-linux --initrd=/boot/initramfs-linux-lts.img --reuse-cmdline
 # Execute kexec. This will restart everything, including kernel.
 systemctl kexec

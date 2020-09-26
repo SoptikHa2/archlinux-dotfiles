@@ -55,6 +55,13 @@ alias man="viman"
 runaswine() { xhost +SI:localuser:wineuser && sudo -u wineuser env HOME=/home/wineuser USER=wineuser USERNAME=wineuser LOGNAME=wineuser wine "$@"; }
 alias wine="runaswine"
 
+# Use e and se to (sudo) edit a file
+alias e='$EDITOR'
+alias se='sudo $EDITOR'
+
+# Alias xdg-open to x
+alias x='xdg-open'
+
 # Protect myself
 alias rm="rm -I"
 

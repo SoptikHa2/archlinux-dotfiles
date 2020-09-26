@@ -13,3 +13,7 @@ Host rpi4
 Host lain
     User vps
     HostName 185.119.98.156
+
+Host fray1
+    User stastpe8
+    HostName fray1.fit.cvut.cz
