@@ -94,17 +94,80 @@ function g {
             SOURCE="$file"
         done
     fi
-    gcc -Wall -pedantic -O1 -g "$SOURCE" -o "$SOURCE.bin"
-    # TODO: Test
+    g++ --std=c++14 -Wall -pedantic -Wno-long-long -O2 -g "$SOURCE" -o "$SOURCE.bin"
 }
+function rr {
+    BINNAME="main.c.bin"
+    if [[ ! -f "main.c.bin" ]]; then
+            BINNAME="$1"
+            if [[ $BINNAME =~ ^.*\.c$ ]]; then
+                BINNAME="$1.bin"
+            fi
+    fi
+    ./"$BINNAME"
+}
+
 function vg {
     BINNAME="main.c.bin"
     if [[ ! -f "main.c.bin" ]]; then
-        for file in *.c; do
-            BINNAME="$file"
-        done
+            BINNAME="$1"
+            if [[ $BINNAME =~ ^.*\.c$ ]]; then
+                BINNAME="$1.bin"
+            fi
     fi
-    valgrind --leak-check=full "./$SOURCE.bin"
+    valgrind --leak-check=full "./$BINNAME"
 }
+function pt {
+    BINNAME="main.c.bin"
+    if [[ ! -f "main.c.bin" ]]; then
+            BINNAME="$1"
+            if [[ $BINNAME =~ ^.*\.c$ ]]; then
+                BINNAME="$1.bin"
+            fi
+    fi
+    for file in sample/CZE/*_in.txt; do
+        input_id=${file%_*}
+        echo "$input_id"
+        d=$(diff - "$input_id"_out.txt <<<"$("./$BINNAME" <"$file")")
+        c=$(wc -c <<<"$d")
+        if [[ "$c" -gt 1 ]]; then
+            echo "DIFF: $file"
+            bat -l diff - <<<"$d"
+        fi
+    done
+}
+# Add new test
+function at {
+(
+    set -euo pipefail
+    BINNAME="main.c.bin"
+    if [[ ! -f "main.c.bin" ]]; then
+            BINNAME="$1"
+            if [[ $BINNAME =~ ^.*\.c$ ]]; then
+                BINNAME="$1.bin"
+            fi
+    fi
 
+    echo "Enter input for new test. End with EOF (Ctrl+D, maybe multiple times)."
+    in="$(cat)"
+    out="$("./$BINNAME" <<<"$in")"
 
+    echo "Output:"
+    echo "$out"
+    echo -e "\nIs this correct? [Y/n]"
+    read -r choice
+    if [[ "$choice" == "n" ]]; then
+        echo "Enter correct output. End with EOF (Ctrl+D, maybe multiple times)."
+        out="$(cat)"
+    fi
+    echo "Test data: (note: this won't test last newline in outputs correctly)"
+    printf "%s\n>>>>>>>>%s\n<<<<<<<\n" "$in" "$out"
+    echo "Enter test name, enter empty to cancel:"
+    read testname
+    if [[ -n "$testname" ]]; then
+        echo "Saving."
+        printf %s "$in" > sample/CZE/"$testname"_in.txt
+        printf %s "$out\n" > sample/CZE/"$testname"_out.txt
+    fi
+)
+}

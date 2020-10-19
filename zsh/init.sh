@@ -10,3 +10,7 @@ fi
 if [[ ! "$SSH_AUTH_SOCK" ]]; then
     source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
 fi
+
+if [[ $(wc -l "$HOME/todo.md" | cut -d' ' -f1) -ge 1 ]]; then
+    bat "$HOME"/todo.md --decorations=never --paging=never
+fi

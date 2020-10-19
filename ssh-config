@@ -17,3 +17,6 @@ Host lain
 Host fray1
     User stastpe8
     HostName fray1.fit.cvut.cz
+Host fray2
+    User stastpe8
+    HostName fray2.fit.cvut.cz
