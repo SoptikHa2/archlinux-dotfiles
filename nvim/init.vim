@@ -104,6 +104,9 @@ if !exists('g:vscode')
 
     " Man pages support
     Plug 'vim-utils/vim-man'
+
+    " Discord rich presence
+    Plug 'anned20/vimsence'
 endif
 
 call plug#end()
