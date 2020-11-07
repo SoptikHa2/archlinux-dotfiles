@@ -23,3 +23,6 @@ fi
 
 # Disable .net core telemetry
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
+
+# Tell address sanitizer to call abort, which can be catched by debugger
+export ASAN_OPTIONS='abort_on_error=1'

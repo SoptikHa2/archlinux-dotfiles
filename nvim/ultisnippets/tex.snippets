@@ -1,11 +1,16 @@
 snippet article "documentclass article" b
 \documentclass{article}
 
-\usepackage[a4paper]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[czech]{babel}
+\usepackage{lmodern}
+\usepackage[top=2cm,bottom=2cm,left=2cm,right=2cm]{geometry}
+\usepackage[colorlinks=true]{hyperref}
+\usepackage{graphicx}
 \usepackage[pdf]{graphviz}
 \usepackage{circuitikz}
 \usepackage{multicol}
-\usepackage{hyperref}
 \usepackage{amsmath}
 % Inkscape figures - https://castel.dev/post/lecture-notes-2/
 \usepackage{import}

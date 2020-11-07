@@ -57,7 +57,7 @@ please () {
 # printf 'abc def\nghi\n' | lambda x | wc -l; wc -w <<<$x
 # 2
 # 3
-function lambda {
+lambda() {
 	# We need at least one argument to be useful
 	if [[ $# -le 0 ]]; then
 		echo "lambda: warn: Specify at least one variable in which will be copied stdin." >&2
@@ -89,12 +89,15 @@ function lambda {
 # Progtest functions
 function g {
     SOURCE="main.c"
+    if [[ -n "$1" ]]; then
+        SOURCE="$1"
+    fi
     if [[ ! -f "main.c" ]]; then
         for file in *.c; do
             SOURCE="$file"
         done
     fi
-    g++ --std=c++14 -Wall -pedantic -Wno-long-long -O2 -g "$SOURCE" -o "$SOURCE.bin"
+    g++ --std=c++14 -Wall -pedantic -Wno-long-long -fsanitize=address -g -pg -fPIE "$SOURCE" -o "$SOURCE.bin"
 }
 function rr {
     BINNAME="main.c.bin"
@@ -107,7 +110,7 @@ function rr {
     ./"$BINNAME"
 }
 
-function vg {
+vg() {
     BINNAME="main.c.bin"
     if [[ ! -f "main.c.bin" ]]; then
             BINNAME="$1"
@@ -117,13 +120,13 @@ function vg {
     fi
     valgrind --leak-check=full "./$BINNAME"
 }
-function pt {
+pt() {
     BINNAME="main.c.bin"
-    if [[ ! -f "main.c.bin" ]]; then
-            BINNAME="$1"
-            if [[ $BINNAME =~ ^.*\.c$ ]]; then
-                BINNAME="$1.bin"
-            fi
+    if [[ -n "$1" ]]; then
+        BINNAME="$1"
+        if [[ $BINNAME =~ ^.*\.c$ ]]; then
+            BINNAME="$1.bin"
+        fi
     fi
     for file in sample/CZE/*_in.txt; do
         input_id=${file%_*}
@@ -137,7 +140,7 @@ function pt {
     done
 }
 # Add new test
-function at {
+at() {
 (
     set -euo pipefail
     BINNAME="main.c.bin"
@@ -166,8 +169,16 @@ function at {
     read testname
     if [[ -n "$testname" ]]; then
         echo "Saving."
-        printf %s "$in" > sample/CZE/"$testname"_in.txt
-        printf %s "$out\n" > sample/CZE/"$testname"_out.txt
+        printf "%s\n" "$in" > sample/CZE/"$testname"_in.txt
+        printf "%s\n" "$out" > sample/CZE/"$testname"_out.txt
     fi
+)
+}
+
+# MS Teams download
+destreamer() {
+(
+cd "$HOME/data/Applications/destreamer" || exit 1
+./destreamer.sh -ku stastpe8 -o "$HOME/data/Videos" -i "$1"
 )
 }

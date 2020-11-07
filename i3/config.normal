@@ -250,9 +250,9 @@ bindcode 123 exec pavolume --up
 # Play/pause firefox
 #bindcode 172 exec play-pause-firefox.sh
 # Play/pause next/prev - any player (spotify)
-bindcode 172 exec playerctl play-pause
-bindcode 171 exec playerctl next
-bindcode 173 exec playerctl previous
+bindcode 172 exec playerctl play-pause -p spotify
+bindcode 171 exec playerctl next -p spotify
+bindcode 173 exec playerctl previous -p spotify
 # Use mod+(arrow key) to rotate laptop screen orientation
 # Only numpad arrow keys work
 # The variable $TARGET_DISPLAY is set in ~/archlinux-dotfiles/zsh/defaults.sh

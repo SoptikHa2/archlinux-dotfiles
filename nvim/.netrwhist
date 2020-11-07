@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =6
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/home/petr/prog/Bash/fit-textbook-quicksearch/api'
 let g:netrw_dirhist_6='/home/petr/archlinux-dotfiles/i3'
 let g:netrw_dirhist_5='/home/petr/archlinux-dotfiles/nvim/ultisnippets'
 let g:netrw_dirhist_4='/home/petr/archlinux-dotfiles/nvim'

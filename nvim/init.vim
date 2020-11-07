@@ -25,6 +25,12 @@ if &filetype == "man"
     set norelativenumber
 endif
 
+" Save fold on vim exit/enter
+" zf -> create fold; zj, zd, za -> toggle fold, zd -> delete fold
+" https://www.linux.com/training-tutorials/vim-tips-folding-fun/
+" au BufWinLeave * mkview
+" au BufWinEnter * silent loadview
+
 "┌────────────────┐
 "│ KEYBOARD REMAP │
 "└────────────────┘
@@ -106,7 +112,7 @@ if !exists('g:vscode')
     Plug 'vim-utils/vim-man'
 
     " Discord rich presence
-    Plug 'anned20/vimsence'
+    "Plug 'anned20/vimsence'
 endif
 
 call plug#end()

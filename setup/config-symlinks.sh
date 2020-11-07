@@ -38,6 +38,9 @@ ln -sf ~/archlinux-dotfiles/zshrc ~/.zshrc
 # Nvim
 ln -sf ~/archlinux-dotfiles/nvim ~/.config/nvim
 
+# Gdb
+ln -sf ~/archlinux-dotfiles/gdbinit ~/.gdbinit
+
 # SSH
 mkdir -p ~/.ssh
 ln -sf ~/archlinux-dotfiles/ssh-config ~/.ssh/config
