@@ -32,6 +32,9 @@ alias bc="bc -lq"
 # Make bat behave more like cat and less like less
 alias bat="bat ---style=plain,header,grid --paging never"
 
+# Delta is so fancy
+alias diff="delta"
+
 # Make x11vnc use password and ssl by default
 alias x11vnc="x11vnc -usepw -ssl"
 

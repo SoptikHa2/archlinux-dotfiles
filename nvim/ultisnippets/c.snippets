@@ -3,3 +3,32 @@ for(int $1 = 0; $1 < $2; $1++) {
 	$0
 }
 endsnippet
+
+snippet pt "Progtest heading" b
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <assert.h>
+
+#ifndef debug
+	#define debug printf
+#endif
+#ifndef true
+	#define true 1
+#endif
+#ifndef false
+	#define false 0
+#endif
+#ifndef bool
+	#define bool char
+#endif
+#ifndef M_PI
+	#define M_PI acos(-1.0)
+#endif
+
+int main( void ) {
+	$0
+
+	return 0;
+}
+endsnippet

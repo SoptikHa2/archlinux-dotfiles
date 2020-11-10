@@ -20,3 +20,7 @@ Host fray1
 Host fray2
     User stastpe8
     HostName fray2.fit.cvut.cz
+
+Host gitlab.alz.lcl
+    User Petr.Stastny2
+    IdentityFile ~/.ssh/id_ed25519

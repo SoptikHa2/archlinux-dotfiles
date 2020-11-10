@@ -113,6 +113,9 @@ if !exists('g:vscode')
 
     " Discord rich presence
     "Plug 'anned20/vimsence'
+    
+    " Acitivity watch
+    "Plug 'ActivityWatch/aw-watcher-vim'
 endif
 
 call plug#end()
