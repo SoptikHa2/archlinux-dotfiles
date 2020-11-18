@@ -342,6 +342,9 @@ bindsym $meh+c exec copy-from-screen
 # (czech)
 bindsym $hyper+c exec copy-from-screen ces
 
+# Cycle graphical tablet output
+bindsym $hyper+g exec cycle-wacom-output
+
 # Focus some windows on $mod+Function key
 bindsym $me+F1 [class="firefox"] focus
 bindsym $meh+F2 [class="Alacritty"] focus
