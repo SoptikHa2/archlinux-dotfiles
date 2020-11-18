@@ -31,6 +31,9 @@ endif
 " au BufWinLeave * mkview
 " au BufWinEnter * silent loadview
 
+" Virtual edit - cursor can go outside text (:h 've')
+set ve=block
+
 "┌────────────────┐
 "│ KEYBOARD REMAP │
 "└────────────────┘

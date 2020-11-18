@@ -26,9 +26,30 @@ snippet pt "Progtest heading" b
 	#define M_PI acos(-1.0)
 #endif
 
+// Documentation is left as an exercise for the reader.
+
 int main( void ) {
 	$0
 
 	return 0;
+}
+endsnippet
+
+snippet growarr "Growing array" b
+int $2_capacity = 100;
+int $2_length = 0;
+$3 * $2 = ($3 *)malloc( $2_capacity * sizeof(*$2) );
+
+$4
+
+if ( $2_length >= $2_capacity ) {
+	$2_capacity *= 2;
+	$3 * $2_realloced = ($3 *)realloc( $2, sizeof(*$2_realloced) );
+	if ( $2_realloced == NULL ) {
+		free ( $2 );
+		// TODO: free stuff
+		return NULL;
+	}
+	$2 = $2_realloced;
 }
 endsnippet

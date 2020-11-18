@@ -131,7 +131,7 @@ pt() {
     for file in sample/CZE/*_in.txt; do
         input_id=${file%_*}
         echo "$input_id"
-        d=$(diff - "$input_id"_out.txt <<<"$("./$BINNAME" <"$file")")
+        d=$(\diff - "$input_id"_out.txt <<<"$("./$BINNAME" <"$file")")
         c=$(wc -c <<<"$d")
         if [[ "$c" -gt 1 ]]; then
             echo "DIFF: $file"
