@@ -1,0 +1,26 @@
+snippet for "For loop" b
+for(int $1 = 0; $1 < $2; $1++) {
+	$0
+}
+endsnippet
+
+snippet pt "Progtest heading" b
+#include <iostream>
+
+int main () {
+
+}
+endsnippet
+
+snippet growarr "Growing array" b
+int $2Capacity = 100;
+int $2Length = 0;
+$3 * $2 = ($3 *)malloc( $2Capacity * sizeof(*$2) );
+
+$4
+
+if ( $2Length >= $2Capacity ) {
+	$2Capacity *= 2;
+	$2 = ($3 *)realloc( $2, sizeof(*$2) * $2Capacity );
+}
+endsnippet

@@ -46,6 +46,9 @@ mkdir -p ~/.ssh
 ln -sf ~/archlinux-dotfiles/ssh-config ~/.ssh/config
 ln -sf ~/archlinux-dotfiles/pam_environment ~/.pam_environment
 
+# Xbindkeysrc
+ln -sf ~/archlinux-dotfiles/xbindkeysrc ~/.xbindkeysrc
+
 # Custom scripts
 for file in ~/archlinux-dotfiles/bin/*; do
 	path_without_sh=$(basename "$file" | cut -d'.' -f1)

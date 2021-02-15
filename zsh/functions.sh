@@ -93,9 +93,22 @@ function g {
         SOURCE="$1"
     fi
     if [[ ! -f "main.c" ]]; then
-        for file in *.c; do
-            SOURCE="$file"
-        done
+        if [[ -f "main.cpp" ]]; then
+            SOURCE="main.cpp"
+        else
+            found=0
+            for file in *.c; do
+                SOURCE="$file"
+                found=1
+                break
+            done
+            if [[ "$found" -eq 0 ]]; then
+                for file in *.cpp; do
+                    SOURCE="$file"
+                    break
+                done
+            fi
+        fi
     fi
     g++ --std=c++14 -Wall -pedantic -Wno-long-long -fsanitize=address -g -pg -fPIE "$SOURCE" -o "$SOURCE.bin"
 }

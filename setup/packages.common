@@ -42,6 +42,8 @@ wget
 curl
 profile-sync-daemon
 tar
+xdotool
+xbindkeys
 
 
 #;NICETOHAVE

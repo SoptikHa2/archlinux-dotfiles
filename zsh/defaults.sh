@@ -11,6 +11,8 @@ setopt EXTENDED_HISTORY # logs the start and elapsed time
 export PATH=~/.local/bin:~/.cargo/bin:$PATH
 # Add ruby path
 export PATH=/home/petr/.gem/ruby/2.7.0/bin:$PATH
+# Add perl path
+export PATH=/usr/bin/vendor_perl:$PATH
 # Add all my scripts
 export PATH=~/.local/scripts:$PATH
 

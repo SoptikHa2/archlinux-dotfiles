@@ -34,7 +34,7 @@ line-size = 4
 ; Show currently focused window name at center of screen
 [module/window_name]
 type = custom/script
-exec = xdotool getwindowfocus getwindowname | cut -c -80
+exec = polybar-get-title
 interval = 1
 
 label-underline = ${colors.primary}

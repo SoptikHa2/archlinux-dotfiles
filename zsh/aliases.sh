@@ -65,6 +65,9 @@ alias se='sudo $EDITOR'
 # Alias xdg-open to x
 alias x='xdg-open'
 
+# Sane compiler options
+alias gpp="g++ --std=c++14 -Wall -pedantic -Wno-long-long -fsanitize=address -g -pg -fPIE"
+
 # Protect myself
 alias rm="rm -I"
 
@@ -81,6 +84,8 @@ alias nmapa='nmap'
 
 # Yeah, I really felt the need to script this for a solid hour
 alias alterncase="sed '"'s/(.)(.)?/\u\1\l\2/g'"' -E"
+
+alias uwu="sed '"'s/([uU])/y\1/g;s/r/w/g;s/R/W/g;s/l/w/g;s/L/W/g'"' -E"
 
 # This file is becoming absurd the more you scroll
 alias whoami="printf \"nobody. You're nothing and you'll never acomplish anything. You're just a void, a hole in this universe full of awesomness. Thousands of years,\
