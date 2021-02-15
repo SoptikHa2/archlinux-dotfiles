@@ -226,6 +226,8 @@ exec --no-startup-id feh --bg-fill ~/archlinux-dotfiles/wallpaper.jpg
 exec --no-startup-id ~/archlinux-dotfiles/polybar/launch.sh
 # Start redshift (blue light filter)
 exec --no-startup-id redshift
+# Start keybindings (wacom keys -> F11, F12)
+exec --no-startup-id xbindkeys
 # Setup keyboard
 # # Remap capslock and escape
 #exec --no-startup-id setxkbmap -option caps:swapescape
@@ -237,6 +239,10 @@ exec --no-startup-id redshift
 # Start rofi in combined mode, which allows user to either run new
 # app or switch to already running one
 bindsym $meh+d exec "rofi -show combi -combi-modi 'window,run' -modi combi"
+
+# Wacom: change active window or switch to math mode (right window, rotated ccw)
+bindsym F11 exec "cycle-wacom-output"
+bindsym F12 exec "set-wacom-window-right-big"
 
 # Set brightness
 bindcode 232 exec change-brightness 0
