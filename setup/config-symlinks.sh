@@ -49,6 +49,9 @@ ln -sf ~/archlinux-dotfiles/pam_environment ~/.pam_environment
 # Xbindkeysrc
 ln -sf ~/archlinux-dotfiles/xbindkeysrc ~/.xbindkeysrc
 
+# Redshift
+ln -sf ~/archlinux-dotfiles/redshift ~/.config
+
 # Custom scripts
 for file in ~/archlinux-dotfiles/bin/*; do
 	path_without_sh=$(basename "$file" | cut -d'.' -f1)
