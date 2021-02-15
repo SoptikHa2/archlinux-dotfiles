@@ -178,11 +178,22 @@ snippet '[\^]' "auto exponent" wrA
 endsnippet
 
 # Parenthesis
-snippet ( "auto left parenthesis" iA
-\left(
+#snippet ( "auto left parenthesis" iA
+#\left(
+#endsnippet
+#snippet ) "auto right parenthesis" iA
+#\right)
+#endsnippet
+snippet < "auto left lt" iA
+\left<
 endsnippet
-snippet ) "auto right parenthesis" iA
-\right)
+snippet > "auto right gt" iA
+\right>
+endsnippet
+
+# -> -> \to
+snippet -> "\to" iA
+\to
 endsnippet
 
 # Fractions
@@ -191,6 +202,14 @@ snippet // "Fraction" iA
 endsnippet
 snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)/' "Fraction" wr
 \\frac{`!p snip.rv = match.group(1)`}{$1}$0
+endsnippet
+
+# Integrals
+snippet int "Integral" iA
+\int{$1\ \mathrm{d}x}$0
+endsnippet
+snippet din "Definite integral" iA
+\int_{$1}^{$2}{$3\ \mathrm{d}x}$0
 endsnippet
 
 # Binom
