@@ -105,7 +105,7 @@ function g {
         fi
     fi
 
-    g++ --std=c++14 -Wall -pedantic -Wno-long-long -fsanitize=address -g -pg -fPIE "$SOURCE" -o "$SOURCE.bin"
+    g++ --std=c++11 -Wall -pedantic -Wno-long-long -fsanitize=address -g -pg -fPIE "$SOURCE" -o "$SOURCE.bin"
 }
 function rr {
     BINNAME="main.c.bin"

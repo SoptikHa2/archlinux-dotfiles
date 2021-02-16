@@ -66,7 +66,7 @@ alias se='sudo $EDITOR'
 alias x='xdg-open'
 
 # Sane compiler options
-alias gpp="g++ --std=c++14 -Wall -pedantic -Wno-long-long -fsanitize=address -g -pg -fPIE"
+alias gpp="g++ --std=c++11 -Wall -pedantic -Wno-long-long -fsanitize=address -g -pg -fPIE"
 
 # Protect myself
 alias rm="rm -I"
