@@ -88,28 +88,23 @@ lambda() {
 
 # Progtest functions
 function g {
-    SOURCE="main.c"
-    if [[ -n "$1" ]]; then
-        SOURCE="$1"
-    fi
-    if [[ ! -f "main.c" ]]; then
+    SOURCE="$1"
+    
+    if [[ -z "$SOURCE" ]]; then
         if [[ -f "main.cpp" ]]; then
             SOURCE="main.cpp"
+        elif [[ -f "main.c" ]]; then
+            SOURCE="main.c"
         else
-            found=0
-            for file in *.c; do
+            for file in $(find . -maxdepth 1 -name '*.c'); do
                 SOURCE="$file"
-                found=1
-                break
             done
-            if [[ "$found" -eq 0 ]]; then
-                for file in *.cpp; do
-                    SOURCE="$file"
-                    break
-                done
-            fi
+            for file in $(find . -maxdepth 1 -name '*.cpp'); do
+                SOURCE="$file"
+            done
         fi
     fi
+
     g++ --std=c++14 -Wall -pedantic -Wno-long-long -fsanitize=address -g -pg -fPIE "$SOURCE" -o "$SOURCE.bin"
 }
 function rr {
