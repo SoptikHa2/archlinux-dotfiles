@@ -105,7 +105,7 @@ function g {
         fi
     fi
 
-    g++ --std=c++11 -Wall -pedantic -Wno-long-long -fsanitize=address -g -pg -fPIE "$SOURCE" -o "$SOURCE.bin"
+    g++ --std=c++17 -Wall -pedantic -Wno-long-long -fsanitize=address -g -pg -fPIE "$SOURCE" -o "$SOURCE.bin"
 }
 function rr {
     BINNAME="main.c.bin"
@@ -129,14 +129,14 @@ vg() {
     valgrind --leak-check=full "./$BINNAME"
 }
 pt() {
-    BINNAME="main.c.bin"
+    BINNAME="main.cpp.bin"
     if [[ -n "$1" ]]; then
         BINNAME="$1"
-        if [[ $BINNAME =~ ^.*\.c$ ]]; then
+        if [[ $BINNAME =~ ^.*\.cpp$ ]]; then
             BINNAME="$1.bin"
         fi
     fi
-    for file in sample/CZE/*_in.txt; do
+    for file in tests/*_in.txt; do
         input_id=${file%_*}
         echo "$input_id"
         d=$(\diff - "$input_id"_out.txt <<<"$("./$BINNAME" <"$file")")
@@ -151,10 +151,10 @@ pt() {
 at() {
 (
     set -euo pipefail
-    BINNAME="main.c.bin"
-    if [[ ! -f "main.c.bin" ]]; then
+    BINNAME="main.cpp.bin"
+    if [[ ! -f "main.cpp.bin" ]]; then
             BINNAME="$1"
-            if [[ $BINNAME =~ ^.*\.c$ ]]; then
+            if [[ $BINNAME =~ ^.*\.cpp$ ]]; then
                 BINNAME="$1.bin"
             fi
     fi
@@ -177,8 +177,8 @@ at() {
     read testname
     if [[ -n "$testname" ]]; then
         echo "Saving."
-        printf "%s\n" "$in" > sample/CZE/"$testname"_in.txt
-        printf "%s\n" "$out" > sample/CZE/"$testname"_out.txt
+        printf "%s\n" "$in" > tests/"$testname"_in.txt
+        printf "%s\n" "$out" > tests/"$testname"_out.txt
     fi
 )
 }
