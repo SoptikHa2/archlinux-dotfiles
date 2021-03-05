@@ -17,3 +17,5 @@
     smtpServer = smtp.seznam.cz
     smtpUser = soptik.stastny@seznam.cz
     smtpServerPort = 465
+[init]
+	defaultBranch = master

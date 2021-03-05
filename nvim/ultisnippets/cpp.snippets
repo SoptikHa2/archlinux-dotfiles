@@ -8,22 +8,32 @@ snippet pt "Progtest heading" b
 #include <iostream>
 
 int main () {
-	
+
 	$0
 
 	return 0;
 }
 endsnippet
 
-snippet growarr "Growing array" b
-int $2Capacity = 100;
-int $2Length = 0;
-$3 * $2 = ($3 *)malloc( $2Capacity * sizeof(*$2) );
+snippet acm "ACM heading" b
+#include <bits/stdc++.h>
+using namespace std;
 
-$4
+void solve();
 
-if ( $2Length >= $2Capacity ) {
-	$2Capacity *= 2;
-	$2 = ($3 *)realloc( $2, sizeof(*$2) * $2Capacity );
+int main() {
+	
+	int n;
+	cin >> n;
+	for (int i = 0; i < n; i++) {
+		solve();
+	}
+
+	return 0;
+}
+
+void solve() {
+	
+	$0
 }
 endsnippet
