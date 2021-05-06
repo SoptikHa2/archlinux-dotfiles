@@ -228,6 +228,8 @@ exec --no-startup-id ~/archlinux-dotfiles/polybar/launch.sh
 exec --no-startup-id redshift
 # Start keybindings (wacom keys -> F11, F12)
 exec --no-startup-id xbindkeys
+# Start fcitx5 (latex input via ctrl+space)
+#exec --no-startup-id fcitx5
 # Setup keyboard
 # # Remap capslock and escape
 #exec --no-startup-id setxkbmap -option caps:swapescape
