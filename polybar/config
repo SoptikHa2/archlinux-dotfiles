@@ -48,7 +48,7 @@ type = internal/i3
 format = <label-state>
 label-separator = "   "
 
-label-focused-foreground = $(colors.foreground)
+label-focused-foreground = ${colors.foreground}
 label-unfocused-foreground = ${colors.not_important}
 
 ; Workspace with notification
