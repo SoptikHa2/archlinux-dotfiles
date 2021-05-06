@@ -1,13 +1,9 @@
 #!/bin/bash
 
-unpause_notifications() {
-  notify-send "DUNST_COMMAND_RESUME"
-}
-
-trap 'unpause_notifications' EXIT
+trap 'dunstctl set-paused false' EXIT
 
 # Pause notifications
-notify-send "DUNST_COMMAND_PAUSE"
+dunstctl set-paused true
 # i3 lock with custom image
 # This takes ~/archlinux-dotfiles/lockscreen.png and resizes it to resolution detected by xrandr.
 # The file is saved into /tmp. If the resolution matches the already generated image, no new image
