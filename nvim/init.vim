@@ -100,25 +100,30 @@ if !exists('g:vscode')
     "Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
 
     " Racer (autocompletion)
-    Plug 'racer-rust/vim-racer'
+    "Plug 'racer-rust/vim-racer'
 
-    " Resotre view (save folds inbetween vim sessions)
+    " Restore view (save folds inbetween vim sessions)
     Plug 'vim-scripts/restore_view.vim'
 
     " File browser
-    Plug 'preservim/nerdtree'
+    "Plug 'preservim/nerdtree'
 
     " Jump to definitions/etc (IDE)
-    Plug 'pechorin/any-jump.vim'
+    "Plug 'pechorin/any-jump.vim'
 
     " Man pages support
     Plug 'vim-utils/vim-man'
 
     " Discord rich presence
-    "Plug 'anned20/vimsence'
+    "Plug 'hugolgst/vimsence'
     
     " Acitivity watch
     "Plug 'ActivityWatch/aw-watcher-vim'
+    
+    " VANDA IDE
+    "
+    " Coc
+    "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 endif
 
 call plug#end()
@@ -197,7 +202,7 @@ highlight ALEError ctermbg=DarkRed
 " NerdTree
 " Open automatically when opening a directory,
 " don't hide when selecting a file
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
-" Toggle with \n
-nnoremap <leader>n :NERDTreeToggle<CR>
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+"" Toggle with \n
+"nnoremap <leader>n :NERDTreeToggle<CR>
