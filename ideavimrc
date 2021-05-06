@@ -1,1 +1,15 @@
 set relativenumber number
+
+" Clipboard everywhere!
+set clipboard+=unnamedplus
+
+" When scrolling, I want to always see few lines above and below cursor
+set scrolloff=5
+
+" Expand tabs to spaces
+set tabstop=4
+set shiftwidth=0 " Always match tabstop
+set expandtab
+
+" Lets save without leaving insert mode
+inoremap <C-S> <Esc>:w<CR>a
