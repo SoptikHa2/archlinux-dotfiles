@@ -16,24 +16,47 @@ int main () {
 endsnippet
 
 snippet acm "ACM heading" b
+#pragma optimization_level 3
+#pragma GCC optimize("Ofast")
+
 #include <bits/stdc++.h>
 using namespace std;
 
-void solve();
+typedef long long ll;
+typedef unsigned long long ull;
 
-int main() {
-	
-	int n;
-	cin >> n;
-	for (int i = 0; i < n; i++) {
-		solve();
-	}
+#define fio() std::ios::sync_with_stdio(false); std::cin.tie(NULL)
+#define l(a) int a; cin >> a
+#define f(x, n, body) do { for ( int x = 0; x < n; x++) { body; } } while(0)
+#define F(n) for (int i = 0; i < n; ++i)
 
-	return 0;
+#define endl '\n'
+#define nl endl
+
+#define vi vector<int>
+#define vll vector<ll>
+#define vull vector<ull>
+
+#define vvi vector<vector<int>>
+#define vvll vector<vector<ll>>
+#define vvull vector<vector<ull>>
+
+#define pi pair<int, int>
+#define pll pair<ll, ll>
+#define pull pair<ull, ull>
+
+signed A[100000000];
+
+void slv() {
+	$0
 }
 
-void solve() {
+signed main() {
+	fio();
+
+	l(n);
+	f(i, n, slv());
 	
-	$0
+	return 0;
 }
 endsnippet
