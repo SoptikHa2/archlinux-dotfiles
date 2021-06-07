@@ -4,8 +4,9 @@ for(int $1 = 0; $1 < $2; $1++) {
 }
 endsnippet
 
-snippet pt "Progtest heading" b
-#include <iostream>
+snippet main "Default C++ heading" b
+#include <bits/stdc++.h>
+using namespace std;
 
 int main () {
 
@@ -45,13 +46,11 @@ typedef unsigned long long ull;
 #define pll pair<ll, ll>
 #define pull pair<ull, ull>
 
-signed A[100000000];
-
 void slv() {
 	$0
 }
 
-signed main() {
+int main() {
 	fio();
 
 	l(n);
