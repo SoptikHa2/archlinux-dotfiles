@@ -3,3 +3,6 @@
 
 # Set assembly flavor to intel
 set disassembly-flavor intel
+
+# Disable debugging inside stdlib
+skip -rfu "std::.*"
