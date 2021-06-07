@@ -11,7 +11,7 @@ Host sayaka
     ServerAliveCountMax 240
 Host rpi4
     User pi
-    HostName 192.168.3.10
+    HostName 192.168.8.10
 Host lain
     User vps
     HostName 185.119.98.156
