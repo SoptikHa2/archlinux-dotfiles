@@ -318,7 +318,7 @@ mode $gamingMode {
 
 # Define multimonitor setup
 # Toggle workspace between monitors
-bindsym $mod+x move workspace to output right
+bindsym $mod+x move workspace to output up
 
 # Lock screen when lid is closed
 exec --no-startup-id xss-lid -- lock-custom

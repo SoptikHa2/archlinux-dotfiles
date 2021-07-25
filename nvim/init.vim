@@ -34,6 +34,9 @@ endif
 " Virtual edit - cursor can go outside text (:h 've')
 set ve=block
 
+" Enable mouse
+set mouse=a
+
 "┌────────────────┐
 "│ KEYBOARD REMAP │
 "└────────────────┘

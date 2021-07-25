@@ -284,6 +284,7 @@ bindsym Shift+Print exec maim | xclip -selection clipboard -t image/png
 bindsym Ctrl+Print exec maim -i $(xdotool getactivewindow) ~/data/Pictures/Screenshot-$(date +%Y-%m-%d-%H-%M-%S).png
 bindsym Shift+Ctrl+Print exec maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
 bindsym $meh+s exec manual-selection-screenshot
+bindsym $meh+g exec color-from-mouse-cursor
 # Custom menus
 bindsym $meh+t exec multimonitor-setup
 # Make window sticky with alt+shift+s
@@ -354,7 +355,7 @@ bindsym $hyper+c exec copy-from-screen ces
 bindsym $hyper+g exec cycle-wacom-output
 
 # Focus some windows on $mod+Function key
-bindsym $me+F1 [class="firefox"] focus
+bindsym $meh+F1 [class="firefox"] focus
 bindsym $meh+F2 [class="Alacritty"] focus
 bindsym $meh+F3 [class="discord"] focus
 bindsym $meh+F4 [class="Caprine"] focus
