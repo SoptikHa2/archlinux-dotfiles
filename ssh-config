@@ -15,6 +15,16 @@ Host rpi4
 Host lain
     User vps
     HostName 185.119.98.156
+Host caligula
+    User petr
+    HostName 217.195.171.233
+    Port 222
+    ProxyJump lain
+Host remote-rpi4
+    User pi
+    HostName 217.195.171.233
+    Port 322
+    ProxyJump lain
 
 Host fray1
     User stastpe8
@@ -26,3 +36,11 @@ Host fray2
 Host gitlab.alz.lcl
     User Petr.Stastny2
     IdentityFile ~/.ssh/id_ed25519
+
+Host fiks
+    User soptik
+    HostName fiks.fit.cvut.cz
+
+Host fiks-root
+    User root
+    HostName fiks.fit.cvut.cz
